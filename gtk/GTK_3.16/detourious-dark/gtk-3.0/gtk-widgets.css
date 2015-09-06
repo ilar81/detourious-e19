@@ -1,0 +1,258 @@
+* {
+	background-clip: padding-box;
+    background-origin: border-box;
+	
+	-GtkButton-child-displacement-x: 0;
+    -GtkButton-child-displacement-y: 0;
+    -GtkButton-default-border: 0;
+    -GtkButton-image-spacing: 0;
+    -GtkButton-inner-border: 1;
+    -GtkButton-interior-focus: true;
+    -GtkDialog-button-spacing: 0;
+    -GtkDialog-action-area-border: 5;
+	-GtkCheckButton-indicator-size: 18;
+	-GtkCheckMenuItem-indicator-size: 18;
+	-GtkComboBox-arrow-scaling: 0.5;
+	/* -GtkComboBox-shadow-type: 2; */
+	-GtkEntry-inner-border: 2;
+	-GtkMenu-inner-border: 0;
+	-GtkEntry-progress-border: 0; 
+	-GtkExpander-expander-size: 10;   
+	-GtkHTML-link-color: @link_color;
+	-GtkIMHtml-hyperlink-color: @link_color;
+	-GtkMenu-horizontal-padding: 0;
+	-GtkMenu-vertical-padding: -1;  
+	-GtkMenuItem-arrow-scaling: 0.5;
+	-GtkMenuBar-internal-padding: 0;
+	-GtkNotebook-tab-overlap: 1;
+    -GtkNotebook-tab-curvature: 0;
+    -GtkNotebook-initial-gap: 0;
+    -GtkNotebook-arrow-spacing: 5;
+    -GtkNotebook-has-tab-gap: true;
+	-GtkPaned-handle-size: 0;
+	-GtkProgressBar-min-horizontal-bar-height: 16;
+	-GtkProgressBar-min-vertical-bar-width: 16;
+	-GtkRange-trough-border: 1;
+	-GtkRange-slider-width: 12;
+	-GtkRange-stepper-size: 13;
+	-GtkRange-trough-under-steppers: 1;
+	-GtkRange-stepper-spacing: 0;
+	-GtkScale-trough-border: 0;
+	-GtkScale-trough-side-details: 1;
+	-GtkScrollbar-activate-slider: 1;
+	-GtkScrollbar-trough-border: 0;
+	-GtkScrollbar-slider-width: 20;
+	-GtkScrollbar-min-slider-length: 30;
+	-GtkScrollbar-has-forward-stepper: 0;
+	-GtkScrollbar-has-backward-stepper: 0;
+	-GtkScrollbar-has-secondary-forward-stepper: 0;
+	-GtkScrollbar-has-secondary-backward-stepper: 0;
+	-GtkScrolledWindow-scrollbar-spacing: 0;
+	-GtkScrolledWindow-scrollbars-within-bevel: 1;
+	-GtkSeparatorMenuItem-horizontal-padding: 0;
+	-GtkTextView-error-underline-color: @error_color;
+	-GtkToolButton-icon-spacing: 6;
+	-GtkToolItemGroup-expander-size: 11;
+	-GtkToolbar-internal-padding: 0;
+	-GtkTreeView-expander-size: 4;
+	-GtkTreeView-vertical-separator: 0;
+	-GtkWidget-wide-separators: 1;
+	-GtkWidget-separator-width: 1;
+	-GtkWidget-separator-height: 1;
+	-GtkWidget-wide-separators: false;
+	-GtkWidget-focus-padding: 0;
+	-GtkWidget-focus-line-width: 1;
+	-GtkWidget-link-color: @link_color;
+	-GtkWidget-visited-link-color: @link_color;
+	-GtkWindow-resize-grip-width: 14;
+	-GtkWindow-resize-grip-height: 14;
+	-WnckTasklist-fade-overlay-rect: 0;
+
+	border-width: 1px;
+	/*padding: 1;*/
+	
+	outline-color: alpha(@theme_fg_color, 0.3);
+    outline-style: dashed;
+    outline-offset: 2px;
+
+}
+
+/***************
+ * Base States *
+ ***************/
+
+GtkWindow {
+	color: @theme_fg_color;
+	background-color: @theme_bg_color;
+}
+
+* {
+	/*background-color: @theme_bg_color;*/
+}
+
+*:hover {
+	background-color: shade (@theme_bg_color, 1.02);
+	color: @theme_fg_color;
+}
+
+*:selected,
+*:selected:focus {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+*:selected:focused {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+*:insensitive {
+	/*background-color: @insensitive_bg_color;*/
+	color: @insensitive_fg_color;
+	border-color: @insensitive_border_color;
+}
+
+*:active {
+	background-color: shade (@theme_bg_color, 0.915);
+}
+
+GtkPaned {
+    background-color: @theme_bg_color;
+}
+
+GtkEventBox {
+    background-color: @theme_bg_color;
+}
+
+
+
+.background {
+	border-style: none;
+	border-width: 0;
+	border-radius: 0;
+}
+
+.tooltip {
+	padding: 4px 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: shade (@theme_tooltip_bg_color, 0.80);
+	/*background-color: @theme_tooltip_bg_color;*/
+	background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_tooltip_bg_color, 1.2)),
+                                     to (shade(@theme_tooltip_bg_color, 0.9)));
+	color: @theme_tooltip_fg_color;
+}
+
+.grip {
+	background-color: shade (@inactive_frame_color, 0.93);
+}
+
+.rubberband {
+	background-color: alpha (@theme_selected_bg_color, 0.35);
+	border-color: @theme_selected_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+}
+
+.pane-separator {
+	border-style: none;
+	border-width: 0;
+	color: shade (@inactive_frame_color, 0.80);
+}
+
+.pane-separator:prelight,
+.pane-separator:selected {
+	color: @theme_text_color;
+}
+
+GtkStatusbar {
+	padding: 5px;
+	color: @theme_fg_color;
+	-GtkStatusbar-shadow-type: none;
+}
+
+GtkStatusbar .frame {
+	border-width: 0;
+}
+
+/***********
+ * spinner *
+ ***********/
+@keyframes spin {
+	to {
+		-gtk-icon-transform: rotate(1turn); } }
+
+.spinner {
+	background-image: none;
+	background-color: blue;
+	opacity: 0;
+	-gtk-icon-source: -gtk-icontheme("process-working-symbolic"); }
+
+.spinner:active {
+    opacity: 1;
+    animation: spin 1s linear infinite; }
+
+.spinner:active:insensitive {
+	opacity: 0.5; }
+
+
+GtkTextView {
+	-GtkTreeView-expander-size:11px;
+	-GtkTreeView-indicator-size:11px;
+	background-color: shade (@theme_bg_color, 0.8);
+	color: #000;
+}
+
+/*************************
+ * Touch text selections *
+ *************************/
+.popover {
+    border-radius: 3px;
+    background-clip: border-box;
+    border-color: shade(@theme_base_color, 0.5);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 1px 4px #000;
+    margin: 10px;
+    padding: 2px;
+    color: @theme_text_color;
+    background-color: shade(@theme_bg_color, 1.05);
+}
+
+.popover.osd {
+    background-color: @selected_bg_color;
+    border-color: @theme_bg_color;
+    box-shadow: 0 2px 8px 3px #000;
+    color: @selected_fg_color;
+}
+
+.popover > .list,
+.popover > .view,
+.popover > .toolbar {
+	border: none;
+    background-color: transparent;
+}
+
+.popover.osd > .toolbar .button {
+    border-radius: 0px;
+    border-width: 0px;
+    background-image: none;
+    background-color: transparent;
+}
+
+.popover .button.flat,
+.popover .button.flat:hover {
+    transition: none;
+}
+
+.popover .separator {
+    font-size: 80%;
+    font-weight: bold;
+    color: alpha(@theme_text_color,0.1);
+    text-shadow: none;
+    background-color: transparent;
+    icon-shadow: none;
+    border: 0;
+}

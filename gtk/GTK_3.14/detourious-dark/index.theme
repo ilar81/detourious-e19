@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=detourious-dark
+Name[en_US]=detourious-dark
+Comment=A great Enlightenment theme
+Encoding=UTF-8
+
+
+[X-GNOME-Metatheme]
+GtkTheme=detourious-dark
+MetacityTheme=detourious-dark
+IconTheme=Humanities-Blue
+CursorTheme=DMZ-White
+ButtonLayout=:minimize,maximize,close

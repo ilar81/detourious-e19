@@ -1,0 +1,21 @@
+Detourious theme for Enlightenmnet desktop environment, elementary widget kit and GTK widget kit.
+
+REQUIREMENTS
+============
+*elementary
+*efl
+*enlightenment
+*ldconfig is suggested for detecting GTK3 version
+
+BUILDING AND INSTALLING
+=======================
+Build::
+        ./autogen.sh
+        make
+Install::
+        make install
+
+NOTES
+=====
+For installing appropriate version of GTK3 theme ldconfig is needed. But it is not required.
+Without it GTK theme is not installed.

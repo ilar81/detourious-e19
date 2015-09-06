@@ -1,0 +1,151 @@
+/*******************
+ * check and radio *
+ *******************/
+.check,
+.radio,
+.check:insensitive,
+.radio:insensitive {
+    background-color: transparent;
+    border-style: none;
+    color: @theme_text_color;
+    padding: 5px;
+}
+
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+	background-color: transparent;
+    color: @theme_text_color;
+}
+
+.check,
+.check row:selected,
+.check row:selected:focus {
+	background-image: url("images/Check-Radio/checkbox-unchecked.png");
+}
+
+.check:hover,
+.check row:selected:hover,
+.check row:selected:focus:hover {
+	background-image: url("images/Check-Radio/checkbox-unchecked-hover.png");
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focus:insensitive {
+	background-image: url("images/Check-Radio/checkbox-unchecked-insensitive.png");
+}
+
+.check:active,
+.check row:selected:active,
+.check row:selected:focus:active {
+	background-image: url("images/Check-Radio/checkbox-checked.png");
+}
+
+.check:active:hover,
+.check row:selected:active:hover,
+.check row:selected:focus:active:hover {
+	background-image: url("images/Check-Radio/checkbox-checked-hover.png");
+}
+
+.check:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focus:active:insensitive {
+	background-image: url("images/Check-Radio/checkbox-checked-insensitive.png");
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focus:inconsistent {
+	background-image: url("images/Check-Radio/checkbox-mixed.png");
+}
+
+.check:inconsistent:hover,
+.check row:selected:inconsistent:hover,
+.check row:selected:focus:inconsistent:hover {
+	background-image: url("images/Check-Radio/checkbox-mixed-hover.png");
+}
+
+.check:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focus:inconsistent:insensitive {
+	background-image: url("images/Check-Radio/checkbox-mixed-insensitive.png");
+}
+
+.radio,
+.radio row:selected,
+.radio row:selected:focus {
+	background-image: url("images/Check-Radio/option-unchecked.png");
+}
+
+.radio:hover,
+.radio row:selected:hover,
+.radio row:selected:focus:hover {
+	background-image: url("images/Check-Radio/option-unchecked-hover.png");
+}
+
+.radio:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focus:insensitive {
+	background-image: url("images/Check-Radio/option-unchecked-insensitive.png");
+}
+
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focus:active {
+	background-image: url("images/Check-Radio/option-checked.png");
+}
+
+.radio:active:hover,
+.radio row:selected:active:hover,
+.radio row:selected:focus:active:hover {
+	background-image: url("images/Check-Radio/option-checked-hover.png");
+}
+
+.radio:active:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focus:active:insensitive {
+	background-image: url("images/Check-Radio/option-checked-insensitive.png");
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focus:inconsistent {
+	background-image: url("images/Check-Radio/option-mixed.png");
+}
+
+.radio:inconsistent:hover,
+.radio row:selected:inconsistent:hover,
+.radio row:selected:focus:inconsistent:hover {
+	background-image: url("images/Check-Radio/option-mixed-hover.png");
+}
+
+.radio:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focus:inconsistent:insensitive {
+	background-image: url("images/Check-Radio/option-mixed-insensitive.png");
+}
+
+/***************
+ * progressbar *
+ ***************/
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focus {
+    background-image: url("images/progress-horizontal.png");
+}
+
+.progressbar.vertical {
+    background-image: url("images/progress-vertical.png");
+}
+
+/***************
+ * resize grip *
+ ***************/
+.grip {
+    background-image: url("images/resize-grip.png");
+    background-color: transparent;
+}
