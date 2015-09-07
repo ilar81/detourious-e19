@@ -56,6 +56,8 @@ echo 'all:
 	edje_cc -DBUILD_ILLUME=1 -DUSE_BOLD_FONT=1 -DCOLORS=1 -id . -fd . main.edc -o detourious-illume-dark.edj
 
 install:
+	mkdir -p ~/.elementary/themes
+	mkdir -p ~/.themes
 	rm -f ~/.elementary/themes/detourious.edj
 	rm -f ~/.elementary/themes/detourious-illume.edj
 	rm -f ~/.elementary/themes/detourious-dark.edj
