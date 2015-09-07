@@ -73,7 +73,14 @@ then
 	'${DETDARKGTK}'
 ' >> Makefile
 else
-	echo '
+	echo '	rm -rf ~/.themes/detourious
+	rm -rf ~/.themes/detourious-dark
+	mkdir -p ~/.themes/detourious/gtk-2.0
+	mkdir -p ~/.themes/detourious-dark/gtk-2.0
+	cp -rf gtk/GTK_3.8/detourious/gtk-2.0 ~/.themes/detourious/gtk-2.0
+	cp -rf gtk/GTK_3.8/detourious-dark/gtk-2.0 ~/.themes/detourious-dark/gtk-2.0
+	cp -f gtk/GTK_3.8/detourious/index.theme ~/.themes/detourious/index.theme
+	cp -f gtk/GTK_3.8/detourious-dark/index.theme ~/.themes/detourious-dark/index.theme
 ' >> Makefile
 fi
 echo "Alright. Type 'make' to build and then 'make install' to install." 

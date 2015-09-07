@@ -18,4 +18,4 @@ Install::
 NOTES
 =====
 For installing appropriate version of GTK3 theme ldconfig is needed. But it is not required.
-Without it GTK theme is not installed.
+Without it GTK3 theme is not installed. You need to place it manually.
