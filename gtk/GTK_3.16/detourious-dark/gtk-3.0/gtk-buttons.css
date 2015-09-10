@@ -98,6 +98,101 @@
 	border-image: url("images/Buttons/button-default-active.png") 7 / 7px stretch;	
 }
 
+.button.suggested-action {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#6e8ebf, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#aac4ed),
+		to (#7196d1));
+	border-image: url("images/Buttons/button-suggested.png") 7 / 7px stretch;
+}
+
+.button.suggested-action:hover {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#6e8ebf, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#b4cefa),
+		to (#84b0f5));
+	border-image: url("images/Buttons/button-suggested-hover.png") 7 / 7px stretch;
+}
+
+.button.suggested-action:active,
+.button.suggested-action:active:hover,
+.button.suggested-action:checked,
+.button.suggested-action:checked:hover
+ {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#6785b3, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#94abcf),
+		to (#6687bd));
+	border-image: url("images/Buttons/button-suggested-active.png") 7 / 7px stretch;
+}
+
+.button.suggested-action:insensitive {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#6e8ebf, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#9da7b6),
+		to (#8a99b0));
+	border-image: url("images/Buttons/button-suggested-off.png") 7 / 7px stretch;
+}
+
+.button.suggested-action:insensitive > GtkLabel {
+	color: inherit;
+}
+
+.button.destructive-action {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#b35a5a, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#d99999),
+		to (#c26262));
+	border-image: url("images/Buttons/button-destructive.png") 7 / 7px stretch;
+}
+
+.button.destructive-action:hover {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#b35a5a, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#deb1b1),
+		to (#c47c7c));
+	border-image: url("images/Buttons/button-destructive-hover.png") 7 / 7px stretch;
+}
+
+.button.destructive-action:active,
+.button.destructive-action:active:hover,
+.button.destructive-action:checked,
+.button.destructive-action:checked {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#b35a5a, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#d9a8a8),
+		to (#c97f7f));
+	border-image: url("images/Buttons/button-destructive-active.png") 7 / 7px stretch;
+}
+
+.button.destructive-action:insensitive {
+	color: #fff;
+	text-shadow: 0px 1px alpha (#b35a5a, 0.4);
+	background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (#e0aeae),
+		to (#c25d5d));
+	border-image: url("images/Buttons/button-destructive-off.png") 7 / 7px stretch;
+}
+
+.button.destructive-action:insensitive > GtkLabel {
+	color: inherit;
+}
+
 .button.flat,
 .button.flat:backdrop,
 .button.flat:insensitive,
