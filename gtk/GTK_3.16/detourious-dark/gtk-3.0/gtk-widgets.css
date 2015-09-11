@@ -256,3 +256,43 @@ GtkTextView {
     icon-shadow: none;
     border: 0;
 }
+
+/*************************
+ * Stack switcher *
+ *************************/
+.stack-switcher > .button {
+	outline-offset: -3px;
+}
+.stack-switcher > .button > GtkLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.stack-switcher > .button > GtkImage {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.stack-switcher > .button.text-button {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 5px;
+}
+.stack-switcher > .button.image-button {
+	padding: 1px 3px;
+}
+.stack-switcher > .button.needs-attention:active > GtkLabel, .stack-switcher > .button.needs-attention:active > GtkImage, .stack-switcher > .button.needs-attention:checked > GtkLabel, .stack-switcher > .button.needs-attention:checked > GtkImage {
+	animation: none;
+	background-image: none;
+}
+.stack-switcher > .button.needs-attention > GtkLabel, .stack-switcher > .button.needs-attention > GtkImage, .button .sidebar-item.needs-attention > GtkLabel {
+	animation: needs_attention 150ms ease-in;
+	background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#4080fb), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.5, to(rgba(255, 255, 255, 0.2)), to(transparent));
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	background-position: right 3px, right 4px;
+}
+.stack-switcher > .button.needs-attention > GtkLabel:dir(rtl), .stack-switcher > .button.needs-attention > GtkImage:dir(rtl), .button .sidebar-item.needs-attention > GtkLabel:dir(rtl) {
+	background-position: left 3px, left 4px;
+}
