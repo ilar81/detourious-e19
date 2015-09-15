@@ -360,6 +360,7 @@ group {
             type: SWALLOW;
             description {
                 state: "default" 0.0;
+                visible: 1;
                 align: 0.5 0.0;
                 rel1 {
                     relative: 0.0 0.0;
@@ -371,6 +372,11 @@ group {
                     offset: -3 -3;
                 }
             }
+            description { 
+				state: "noicon" 0.0;
+				inherit: "default" 0.0;
+				visible: 0;
+			}
         }
 
         part {
@@ -414,6 +420,18 @@ group {
         }
     }
     programs {
+        program {
+            name: "icon_hide";
+            signal: "e,icon,disabled"; source: "e";
+            action: STATE_SET "noicon" 0.0;
+            target: "e.swallow.icon";
+        }
+        program {
+            name: "icon_show";
+            signal: "e,icon,enabled"; source: "e";
+            action: STATE_SET "default" 0.0;
+            target: "e.swallow.icon";
+        }
         program {
             name: "go_active";
             signal: "e,state,selected";
