@@ -487,7 +487,6 @@ group {
 				TEXT_COLOR_BOLD;
 				TEXT_BOLD("button", 0.5 0.5, 1 1);
 				text.ellipsis: -1;
-				text.text: "Close";				
 			}
 			description {
 				state: "clicked" 0.0;
