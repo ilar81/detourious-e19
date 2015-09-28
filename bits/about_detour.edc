@@ -3,9 +3,6 @@ group {
 	name: "e/theme/about";
 	min: 299 341;
 	max: 299 341;
-	data {
-		item: "borderless" "1";
-	}
 	parts {
 
 		part {
@@ -23,8 +20,8 @@ group {
 					offset: -1 -1; 
 				}
 				image {
-					normal: "images/dialog_im2.png";
-					border: 3 3 3 3;
+					normal: "images/dialog_im0.png";
+					border: 0 0 3 1;
 				}
 				color_class: "dialog_base";
 			}
@@ -39,7 +36,7 @@ group {
 				min: 299 341;
 				max: 299 341;
 				fixed: 1 1;
-				color: 0 0 0 0;
+				color: 0 0 0 20;
 			}
 		}
 
