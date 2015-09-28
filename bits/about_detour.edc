@@ -179,7 +179,7 @@ group {
 		}
 
 		part {
-			name: "text";
+			name: "e.text.label";
 			type: TEXT;
 			effect: TEXT_EFFECT_BOLD;
 			scale: 1;
@@ -196,7 +196,6 @@ group {
 				}
 				TEXT_COLOR_BOLD;
 				TEXT_BOLD("button", 0.5 0.5, 1 1);
-				text.text: "Close";
 				text.ellipsis: -1;
 				
 			}
@@ -327,7 +326,7 @@ group {
 		}
 
 		part {
-			name: "text1";
+			name: "e.text.theme";
 			type: TEXT;
 			effect: TEXT_EFFECT_BOLD;
 			scale: 1;
@@ -344,7 +343,6 @@ group {
 				}
 				TEXT_COLOR_BOLD;
 				TEXT_BOLD("button", 0.5 0.5, 1 1);
-				text.text: "Select Theme";
 				text.ellipsis: -1;
 				
 			}

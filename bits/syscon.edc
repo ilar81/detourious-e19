@@ -191,7 +191,7 @@ group {
 		}
 
 		part {
-			name: "text";
+			name: "e.text.label";
 			type: TEXT;
 			effect: TEXT_EFFECT_BOLD;
 			scale: 1;

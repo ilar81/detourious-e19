@@ -7,7 +7,7 @@ program { 									\
 	script { 								\
 		set_state(PART:"shadow", "clicked", 0.0); 			\
 		set_state(PART:"shadow_overlay", "clicked", 0.0); 		\
-		set_state(PART:"text", "clicked", 0.0); 			\
+		set_state(PART:"e.text.label", "clicked", 0.0); 			\
 	} 									\
 } 										\
 program { 									\
@@ -17,7 +17,7 @@ program { 									\
 	action: STATE_SET "default" 0.0; 					\
 	target: "shadow"; 							\
 	target: "shadow_overlay"; 						\
-	target: "text"; 							\
+	target: "e.text.label"; 							\
 } 										\
 program { 									\
 	name: "button_clicked"; 						\
@@ -34,7 +34,7 @@ program { 									\
 	script { 								\
 		set_state(PART:"shadow1", "clicked", 0.0); 			\
 		set_state(PART:"shadow_overlay1", "clicked", 0.0); 		\
-		set_state(PART:"text1", "clicked", 0.0); 			\
+		set_state(PART:"e.text.theme", "clicked", 0.0); 			\
 	} 									\
 } 										\
 program { 									\
@@ -44,7 +44,7 @@ program { 									\
 	action: STATE_SET "default" 0.0; 					\
 	target: "shadow1"; 							\
 	target: "shadow_overlay1"; 						\
-	target: "text1"; 							\
+	target: "e.text.theme"; 							\
 } 										\
 program { 									\
 	name: "button_clicked1"; 						\
