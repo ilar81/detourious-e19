@@ -518,7 +518,7 @@ group {
 				}
 				text {
 					style: "about_detour";
-					text: "detourious is developed by Hannes Janetzek [<lighter>jeffdameth</lighter>], based on detour by Alberto Castro [<lighter>boykot tokyo</lighter>] et al. Porting to E19 by Elias Tchastikov.<\n><\n>detourious is licensed under the BSD Artistic License.<br><br>Enjoy! <-><subliminal>Tricks of the Guild. [2003-2009]</subliminal>";
+					text: "detourious is developed by Hannes Janetzek [<lighter>jeffdameth</lighter>], based on detour by Alberto Castro [<lighter>boykot tokyo</lighter>] et al. Porting to E19 by Elias Tchastikov.<\n><\n>detourious is licensed under the BSD Artistic License.<br><br>Enjoy! <-><subliminal>Tricks of the Guild. [2003-2015]</subliminal>";
 				}
 			}
 		}
