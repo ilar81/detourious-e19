@@ -1,0 +1,294 @@
+/***********
+ * Borders *
+ ***********/
+/* border and inner stroke */
+.button,
+.frame,
+.notebook {
+}
+
+.button:insensitive,
+.frame:insensitive,
+.notebook:insensitive {
+}
+
+/* inset */
+.button:active,
+.button:insensitive,
+.check,
+.entry,
+.radio {
+}
+
+/* shadow */
+.button,
+.primary-toolbar.toolbar.raised.button,
+.check:active,
+.frame,
+.notebook .button,
+.notebook,
+.radio:active {
+}
+
+/* frame */
+.frame {
+	border-radius: 0;
+	border-style: solid;
+    border-color: shade (@theme_bg_color, 0.85);
+}
+
+/* GtkScrolledWindow */
+GtkScrolledWindow.frame {
+	border-style: solid;
+	border-color: @internal_element_color;
+	border-width: 1px;
+	border-radius: 0;
+}
+
+/****************
+ * Text Entries *
+ ****************/
+.entry,
+.toolbar.entry {
+	background-color: @theme_base_color;
+	/*background-image: -gtk-gradient (linear,
+		left top, left bottom,
+		from (shade (@theme_base_color, 0.82)),
+		color-stop (0.12, shade (@theme_base_color, 0.98)),
+		color-stop (0.16, shade (@theme_base_color, 1.0)),
+		to (@theme_base_color));*/
+	color: @theme_text_color;
+	border-radius: 5px;
+    border-width: 3px;
+	background-image: none;
+	border-style: solid;
+	border-image: url("images/Entry/entry.png") 7 / 7px stretch;
+	padding: 3px;
+}
+
+.entry:focused {
+	/*border-color: @theme_selected_bg_color;*/
+	border-image: url("images/Entry/entry-in.png") 7 / 7px stretch;
+}
+
+ .entry:selected,
+ .entry:selected:focused {
+     background-color: @selected_bg_color;
+     color: @selected_fg_color;
+ }
+
+.entry:insensitive {
+	background-color: @insensitive_bg_color;
+}
+
+.entry.progressbar {
+    margin: 0 2px 3px 2px;
+    border-radius: 0;
+    border-width: 0 0 2px;
+    border-color: #4080fb;
+    border-style: solid;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-image: none;
+}
+
+.entry.image.left {
+    padding-left: 0;
+}
+
+.entry.image.right {
+    padding-right: 0;
+}
+
+/******************
+ * combobox entry *
+ ******************/
+
+.linked .entry, GtkComboBox.combobox-entry .entry {
+	border-image: url("images/Entry/middle-entry.png") 7 1 7 1/7px 1px 7px 1px stretch;
+	border-radius: 0;
+	border-width: 3px 0 3px 0;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked .entry:focus, GtkComboBox.combobox-entry .entry:focus {
+    border-image: url("images/Entry/middle-entry-in.png") 7 1 7 1/7px 1px 7px 1px stretch;
+    border-radius: 0;
+    border-width: 3px 0 3px 0;
+    border-style: solid;
+    border-color: transparent;
+    padding: 3px; }
+
+.linked .entry:first-child, GtkComboBox.combobox-entry .entry:first-child {
+	border-image: url("images/Entry/left-entry.png") 7 1 7 7/7px 1px 7px 7px stretch;
+	border-radius: 5px 0 5px 5px;
+	border-width: 3px 0 3px 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked .entry:first-child:focus, GtkComboBox.combobox-entry .entry:first-child:focus {
+    border-image: url("images/Entry/left-entry-in.png") 7 1 7 7/7px 1px 7px 7px stretch;
+    border-radius: 5px 0 5px 5px;
+	border-width: 3px 0 3px 3px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 3px; }
+  
+.linked .entry:last-child, GtkComboBox.combobox-entry .entry:last-child {
+	border-image: url("images/Entry/right-entry.png") 7 7 7 1/7px 7px 7px 1px stretch;
+	border-radius: 5px 5px 5px 0;
+	border-width: 3px 3px 3px 0;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked .entry:last-child:focus, GtkComboBox.combobox-entry .entry:last-child:focus {
+    border-image: url("images/Entry/right-entry-in.png") 7 7 7 1/7px 7px 7px 1px stretch;
+	border-radius: 5px 5px 5px 0;
+	border-width: 3px 3px 3px 0;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+ 
+.linked .entry:only-child, GtkComboBox.combobox-entry .entry:only-child {
+	border-image: url("images/Entry/entry.png") 7 / 7px stretch;
+	border-radius: 5px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+	
+.linked .entry:only-child:focus, GtkComboBox.combobox-entry .entry:only-child:focus {
+    border-image: url("images/Entry/entry-in.png") 7 / 7px stretch;
+	border-radius: 5px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry, .spinbutton.vertical.entry, .spinbutton.vertical.entry:dir(rtl), .spinbutton.vertical.entry:dir(ltr) {
+	box-shadow: none;
+	border-image: url("images/Entry/middle-vertical-entry.png") 1 7 1 7/1px 7px 1px 7px stretch;
+	border-radius: 0;
+	border-width: 0 3px 0 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry:focus, .spinbutton.vertical.entry:focus {
+    box-shadow: none;
+	border-image: url("images/Entry/middle-vertical-entry-in.png") 1 7 1 7/1px 7px 1px 7px stretch;
+	border-radius: 0;
+	border-width: 0 3px 0 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry:first-child {
+	border-image: url("images/Entry/top-vertical-entry.png") 7 7 1 7/7px 7px 1px 7px stretch;
+	border-radius: 5px 5px 0 0;
+	border-width: 3px 3px 0 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry:first-child:focus {
+	border-image: url("images/Entry/top-vertical-entry-in.png") 7 7 1 7/7px 7px 1px 7px stretch;
+	border-radius: 5px 5px 0 0;
+	border-width: 3px 3px 0 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry:last-child {
+	box-shadow: none;
+	border-image: url("images/Entry/bottom-vertical-entry.png") 1 7 7 7/1px 7px 7px 7px stretch;
+	border-radius: 0 0 5px 5px;
+	border-width: 0 3px 3px 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry:last-child:focus {
+    box-shadow: none;
+    border-image: url("images/Entry/bottom-vertical-entry-in.png") 1 7 7 7/1px 7px 7px 7px stretch;
+    border-radius: 0 0 5px 5px;
+    border-width: 0 3px 3px 3px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 3px; }
+
+.linked.vertical .entry:only-child {
+	border-image: url("images/Entry/entry.png") 7 / 7px stretch;
+	border-radius: 5px;
+	border-width: 3px 3px 3px 3px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 3px; }
+
+.linked.vertical .entry:only-child:focus {
+    border-image: url("images/Entry/entry-in.png") 7 / 7px stretch;
+    border-radius: 5px;
+    border-width: 3px 3px 3px 3px;
+    border-style: solid;
+    border-color: transparent;
+    padding: 3px; }
+
+
+.primary-toolbar GtkComboBox.combobox-entry .button,
+.primary-toolbar GtkComboBox.combobox-entry .button:hover,
+.primary-toolbar GtkComboBox.combobox-entry .button:active,
+.primary-toolbar GtkComboBox.combobox-entry .button:insensitive,
+GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button:hover,
+GtkComboBox.combobox-entry .button:active,
+GtkComboBox.combobox-entry .button:insensitive {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-width: 3px 3px 3px 0;
+    padding: 3px 3px 3px 0;
+ }
+
+/**************
+ * Separators *
+ **************/
+.view.separator,
+.separator {
+    color: shade(@theme_bg_color, 0.8);
+    border-color: shade(@theme_bg_color, 0.8);
+    border-style: solid;
+}
+
+.button .separator,
+.button.separator {
+    border-color: shade (@theme_bg_color, 0.7);
+}
+
+.notebook .button .separator,
+.notebook .button.separator {
+    border-color: shade (@theme_bg_color, 0.7);
+}
+
+.button .separator:insensitive,
+.button.separator:insensitive {
+    border-color: shade (@theme_bg_color, 0.9);
+}
+
+.menuitem.separator {
+    -GtkMenuItem-horizontal-padding: 0;    
+    border: none;
+    color: shade(@theme_bg_color, 0.82);  
+}
+
+/******************
+ * pane separator *
+ ******************/
+.pane-separator {
+    color: shade (@theme_bg_color, 0.7);
+    background-color: @theme_bg_color;
+}

@@ -44,6 +44,13 @@ then
 GTKVER="3.16"
 fi
 fi
+if [ "$VERSIONINFO" -ge "1800" ]
+then
+if [ "$VERSIONINFO" -lt "1899" ]
+then
+GTKVER="3.18"
+fi
+fi
 echo "Version of GTK3 is "${GTKVER}
 DETGTK="cp -rf gtk/GTK_"${GTKVER}"/detourious ~/.themes"
 DETDARKGTK="cp -rf gtk/GTK_"${GTKVER}"/detourious-dark ~/.themes"
