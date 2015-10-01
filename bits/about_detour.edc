@@ -182,7 +182,7 @@ group {
 				color: 255 255 255 178;
 				rel1.offset: -6 -6;
 				rel1.to: "e.text.label";
-				rel2.offset: 5 5;
+				rel2.offset: 5 4;
 				rel2.to: "e.text.label";
 				fill.smooth: 0;
 				color_class: "dialog_base";
@@ -304,7 +304,7 @@ group {
 				color: 255 255 255 178;
 				rel1.offset: -6 -6;
 				rel1.to: "e.text.theme";
-				rel2.offset: 5 5;
+				rel2.offset: 5 4;
 				rel2.to: "e.text.theme";
 				fill.smooth: 0;
 				color_class: "dialog_base";
