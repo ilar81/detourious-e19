@@ -1,8 +1,8 @@
 
 group {
 	name: "e/theme/about";
-   min: 250 290;
-   max: 250 290;
+	min: 250 290;
+	max: 250 290;
 	parts {
 		part { name: "sizer"; type: SPACER;
 			scale: 1;
@@ -24,7 +24,6 @@ group {
 				color_class: "dialog_base";
 			}
 		}
-
 		part {
 			name: "base_rect";
 			type: RECT;
@@ -357,7 +356,6 @@ group {
 			clip_to: "button_clip1";
 			description {
 				state: "default" 0.0;
-				min: 86 26;
 				image.normal: "images/button_im4.png";
 				image.border: 6 6 0 6;
 				color: 255 255 255 0;
@@ -398,7 +396,6 @@ group {
 			clip_to: "button_clip1";
 			description {
 				state: "default" 0.0;
-				min: 86 26;
 				image.normal: "images/button_im5.png";
 				image.border: 6 6 6 13;
 				color: 255 255 255 0;
