@@ -264,14 +264,6 @@ styles {
 		base: "font="FONT" font_size="TEXT_SIZE_LARGE" color=#fff wrap=mixed";
 	}
 	style {
-		name: "about_enlightenment";
-		base: "font="FONT" font_size="TEXT_SIZE" color=#2C2C2C wrap=word text_class=tb_plain";
-		tag:  "hilight" "+ font="FONT_BOLD" font_size="TEXT_SIZE_BOLD" color=#252525 style=shadow shadow_color=#ffffff90 text_class=tb_light";
-		tag: "title" "+ font="FONT_BOLD" font_size="TEXT_SIZE_LARGE" text_class=tb_big";
-		tag:  "br" "\n"; 
-		tag:  "/title" "- \n \n";
-	}
-	style {
 		name: "about_detour";
 		base: "font="FONT" font_size="TEXT_SIZE_LARGE" color=#2C2C2Cff wrap=word";
 		tag: "-" "+ font_size="TEXT_SIZE_LARGE"";
