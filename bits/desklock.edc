@@ -430,7 +430,7 @@ group { name: "e/desklock/pin_box";
 					to_x: "e.swallow.buttons"; 
 					to_y: "entry"; 
 					relative: 0.0 0.0; 
-					offset: -35 -20; 
+					offset: -35 -25; 
 				}
 				rel2 { 
 					to_x: "e.swallow.buttons";
@@ -524,14 +524,19 @@ group { name: "e/desklock/pin_box";
 			effect: TEXT_EFFECT;
 			scale: 1;
 			description { state: "default" 0.0;
-				rel1.relative: 0.5 0.0;
-				rel1.offset: 3 2;
-				rel2.relative: 0.5 0.0;
-				rel2.offset: 3 -2;
-				TEXT_COLOR;
-				TEXT_NORMAL("entry", 1.0 0.5, 1 1);
-				text.ellipsis: -1;
 				fixed: 1 1;
+				rel1.relative: 0.0 0.0;
+				rel1.offset: 7 -30;
+				rel1.to_x: "entry";
+				rel1.to_y: "e.swallow.buttons";
+				rel2.relative: 0.0 0.0;
+				rel2.offset: 3 -30;
+				rel2.to_x: "entry";
+				rel2.to_y: "e.swallow.buttons";
+				align: 0.0 0.0;
+				TEXT_COLOR;
+				TEXT_NORMAL("entry", 0.0 0.0, 1 1);
+				text.ellipsis: -1;
 			}
 		}
 		part { name: "cursor"; mouse_events: 0;
@@ -593,10 +598,8 @@ group { name: "e/desklock/pin_box";
 		part { name: "e.swallow.buttons"; type: SWALLOW;
 			clip_to: "button_clip";
 			description { state: "default";
-				rel1.relative: 0 1.0;
-				rel1.to_y: "e.text.password";
-				rel1.offset: 0 6;
-				align: 0.5 1.0;
+				rel1.relative: 0.5 0.5;
+				rel2.relative: 0.5 0.5;
 			}
 		}
 	}
