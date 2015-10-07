@@ -451,12 +451,14 @@ group { name: "e/desklock/pin_box";
 			mouse_events: 0;
 			description {
 				state: "default" 0.0;
-				rel1.relative: 0.5 0.0;
-				rel1.offset: -90 -4;
-				rel1.to: "e.text.password";
-				rel2.relative: 0.5 1.0;
-				rel2.offset: 82 3;
-				rel2.to: "e.text.password";
+				rel1.relative: 0.0 0.0;
+				rel1.offset: 0 -4;
+				rel1.to_x: "e.swallow.buttons";
+				rel1.to_y: "e.text.password";
+				rel2.relative: 1.0 1.0;
+				rel2.offset: 0 3;
+				rel2.to_x: "e.swallow.buttons";
+				rel2.to_y: "e.text.password";
 				align: 0.5 0.5;
 				image {
 					normal: "images/entry_im0.png";
