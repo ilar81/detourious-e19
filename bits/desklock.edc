@@ -427,15 +427,16 @@ group { name: "e/desklock/pin_box";
 			description { 
 				state: "default" 0.0; 
 				rel1 {
-					to: "entry"; 
+					to_x: "e.swallow.buttons"; 
+					to_y: "entry"; 
 					relative: 0.0 0.0; 
-					offset: -30 -16; 
+					offset: -35 -20; 
 				}
 				rel2 { 
-					to_x: "entry";
+					to_x: "e.swallow.buttons";
 					to_y: "e.text.title";  
 					relative: 1.0 1.0; 
-					offset: 30 15; 
+					offset: 35 15; 
 				}
 				image {
 					normal: "images/desklock_im0.png"; 
