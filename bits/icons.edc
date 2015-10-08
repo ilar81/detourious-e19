@@ -1,5 +1,4 @@
 
-
 # ifdef ICON
 #  undef ICON
 # endif
@@ -11,7 +10,6 @@ group { name: "e/icons/"NAME ;					\
 			repeat_events: 1;			\
 			description { 				\
 				state: "default" 0.0;		\
-				max: 24 24;			\
 				aspect: 1.0 1.0;		\
 				aspect_preference: BOTH;	\
 				image { 			\
@@ -57,7 +55,6 @@ ICON("preferences-position-right-bottom", "images/icons/icon_shelf_right_bottom.
 ICON("system-file-manager","images/custom/cd_folder.png")
 ICON("modules-files","images/custom/cd_folder.png")
 ICON("folder","images/custom/cd_folder.png") 
-
 
 # ifdef ICON
 #  undef ICON
@@ -120,4 +117,3 @@ ICON("wallpaper_scale_aspect_in", "images/icons/wallscreen_im5.png")
 ICON("wallpaper_scale_aspect_out", "images/icons/wallscreen_im3.png")
 ICON("wallpaper_stretch", "images/icons/wallscreen_im1.png")
 ICON("wallpaper_tile", "images/icons/wallscreen_im4.png")
-
