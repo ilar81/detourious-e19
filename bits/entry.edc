@@ -27,7 +27,11 @@ group {
       part { name: "clipper"; type: RECT;
          description { state: "default" 0.0;
             rel1.to: "entry";
+            rel1.relative: 0.0 0.0; 
+			rel1.offset: 3 3;
             rel2.to: "entry";
+            rel2.relative: 1.0 1.0; 
+			rel2.offset: -4 -4;
          }
       }
 
@@ -75,8 +79,8 @@ group {
          clip_to: "clipper";
          description {
             state: "default" 0.0;
-				rel1.offset: 6 3;
-				rel2.offset: -7 -4;
+				rel1.offset: 5 2;
+				rel2.offset: -8 -5;
          }
       }
    }
