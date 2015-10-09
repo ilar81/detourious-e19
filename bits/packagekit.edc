@@ -118,8 +118,8 @@ group { name: "e/modules/packagekit/main";
             image.normal: "images/radio_bt0.png";
             aspect: 1.0 1.0; aspect_preference: VERTICAL;
             max: 256 256;
-            rel1.relative: (36/160) (60/160);
-            rel2.relative: ((36+88)/160) ((60+88)/160);
+            rel1.relative: (26/160) (50/160);
+            rel2.relative: ((46+88)/160) ((70+88)/160);
          }
       }
       part { name: "busy_shadow"; mouse_events: 0;
