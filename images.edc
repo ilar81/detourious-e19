@@ -445,6 +445,9 @@ image: "images/icon_system-lock-screen.png" COMP;
 image: "images/icon_system-log-out.png" COMP;
 image: "images/icon_enlightenment.png" COMP;
 image: "images/icon_warning.png" COMP;
+image: "images/icon_preferences-desktop-signal-bindings.png" COMP;
+image: "images/icon_preferences-variables.png" COMP;
+image: "images/icon_preferences-interaction.png" COMP;
 
 image: "images/actions/empty.png" COMP;
 image: "images/actions/object-move.png" COMP;
