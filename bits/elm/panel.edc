@@ -109,11 +109,11 @@ group { name: "elm/panel/left/default";
             rel2.to: "btn";
             //color_class: "label_text";
             color: 59 59 59 255;
-            image.normal: "images/elm/icon_arrow_left.png";
+            image.normal: "images/icon_arrow_left.png";
          }
          description { state: "hidden" 0.0;
             inherit: "default" 0.0;
-            image.normal: "images/elm/icon_arrow_right.png";
+            image.normal: "images/icon_arrow_right.png";
          }
       }
    }
@@ -184,10 +184,10 @@ group { name: "elm/panel/right/default";
       }
       part { name: "icn";
          description { state: "default" 0.0;
-            image.normal: "images/elm/icon_arrow_right.png";
+            image.normal: "images/icon_arrow_right.png";
          }
          description { state: "hidden" 0.0;
-            image.normal: "images/elm/icon_arrow_left.png";
+            image.normal: "images/icon_arrow_left.png";
          }
       }
    }
@@ -238,13 +238,13 @@ group { name: "elm/panel/top/default";
 			min: 16 16;
             max: 16 16;
             fixed: 1 1;
-            image.normal: "images/elm/icon_arrow_up.png";
+            image.normal: "images/icon_arrow_up.png";
          }
          description { state: "hidden" 0.0;
 			min: 16 16;
             max: 16 16;
             fixed: 1 1;
-            image.normal: "images/elm/icon_arrow_down.png";
+            image.normal: "images/icon_arrow_down.png";
          }
       }
    }
@@ -295,13 +295,13 @@ group { name: "elm/panel/bottom/default";
 			min: 16 16;
             max: 16 16;
             fixed: 1 1;
-            image.normal: "images/elm/icon_arrow_down.png";
+            image.normal: "images/icon_arrow_down.png";
          }
          description { state: "hidden" 0.0;
 			min: 16 16;
             max: 16 16;
             fixed: 1 1;
-            image.normal: "images/elm/icon_arrow_up.png";
+            image.normal: "images/icon_arrow_up.png";
          }
       }
    }

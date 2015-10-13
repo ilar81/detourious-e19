@@ -3,7 +3,7 @@ group { name: "elm/photo/base/default";
       image: "images/elm/frame_1.png" COMP;
       image: "images/elm/frame_2.png" COMP;
       image: "images/elm/dia_grad.png" COMP;
-      image: "images/elm/head.png" COMP;
+      image: "images/icon_head.png" COMP;
    }
    parts {
       part { name: "base0";
@@ -39,7 +39,7 @@ group { name: "elm/photo/base/default";
             rel2.offset: -5 -5;
             aspect: 1.0 1.0;
             aspect_preference: BOTH;
-            image.normal: "images/elm/head.png";
+            image.normal: "images/icon_head.png";
          }
       }
       part { name: "clip";

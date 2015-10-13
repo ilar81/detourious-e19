@@ -6,7 +6,7 @@
 //~elementary images
 
 image: "images/elm/thumb_shadow.png" COMP;
-image: "images/elm/icon_folder.png" COMP;
+image: "images/icon_folder.png" COMP;
 	
 image: "images/elm/ephoto/directory-512.png" COMP;
 image: "images/elm/ephoto/directory-up-512.png" COMP;
@@ -45,10 +45,10 @@ image: "images/elm/ilist_1.png" COMP;
 image: "images/elm/ilist_2.png" COMP;
 image: "images/elm/ilist_item_shadow.png" COMP;
 image: "images/elm/check.png" COMP;
-image: "images/elm/icon_arrow_up.png" COMP;
-image: "images/elm/icon_arrow_down.png" COMP;
-image: "images/elm/icon_arrow_left.png" COMP;
-image: "images/elm/icon_arrow_right.png" COMP;
+image: "images/icon_arrow_up.png" COMP;
+image: "images/icon_arrow_down.png" COMP;
+image: "images/icon_arrow_left.png" COMP;
+image: "images/icon_arrow_right.png" COMP;
 image: "images/elm/shad_circ.png" COMP;
 image: "images/elm/ilist_1_h.png" COMP;
 image: "images/elm/ilist_2_h.png" COMP;
