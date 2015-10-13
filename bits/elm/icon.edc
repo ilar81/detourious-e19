@@ -1,74 +1,154 @@
-#define GROUP_ALIAS_ICON(Name, Alias, File, Min, Max)                   \
+
+
+/*
+ * Standard FreeDesktop icons:
+ * 
+ * WARNING: When you add new icons you MUST ensure to use standard names as per:
+ * http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
+ * If you can't find the name in the spec then you MUST search in the Tango
+ * and/or the Oxigen theme to find a suitable name. IF you really cannot find
+ * anything try at least to be consistent with other existing names.
+ * NOTE: icons marked with an empty comment are names that I cannot
+ *       find anywhere else, so they are not really standard.
+ */
+#define IC(Name, File, Min, Max) \
    group { name: "elm/icon/"##Name##"/default"; min: Min Min; max: Max Max; \
-      alias: "elm/icon/"##Alias##"/default";                            \
-      images.image: File COMP; parts { part { name: "base";             \
-            description { aspect: 1.0 1.0; aspect_preference: BOTH;     \
-               image.normal: File; } } } }
-               
-#define GROUP_ALIAS_ICON1(Name, Alias, File, Min, Max)                   \
+   images.image: File COMP; parts { part { name: "base"; \
+   description { aspect: 1.0 1.0; aspect_preference: BOTH; \
+   image.normal: File; } } } }
+IC("folder",               "images/icon_folder.png",           16, 0);
+IC("user-home",            "images/icon_home.png",             16, 0);
+IC("user-trash",           "images/icon_delete.png",           16, 0);
+
+IC("view-close",           "images/icon_close.png",            16, 0);
+IC("view-refresh",         "images/icon_refresh.png",          16, 0);
+
+IC("window-close",         "images/icon_close.png",            16, 0);
+
+IC("document-close",       "images/icon_close.png",            16, 0);
+IC("document-edit",        "images/icon_edit.png",             16, 0);
+
+IC("dialog-info",          "images/icon_info.png",             16, 0);
+IC("dialog-close",         "images/icon_close.png",            16, 0);
+
+IC("arrow-up",             "images/icon_arrow_up.png",         16, 0);
+IC("arrow-down",           "images/icon_arrow_down.png",       16, 0);
+IC("arrow-left",           "images/icon_arrow_left.png",       16, 0);
+IC("arrow-right",          "images/icon_arrow_right.png",      16, 0);
+IC("arrow-up-left",        "images/icon_arrow_up_left.png",    16, 0); /* */
+IC("arrow-up-right",       "images/icon_arrow_up_right.png",   16, 0); /* */
+IC("arrow-down-left",      "images/icon_arrow_down_left.png",  16, 0); /* */
+IC("arrow-down-right",     "images/icon_arrow_down_right.png", 16, 0); /* */
+
+IC("edit-delete",          "images/icon_delete.png",           16, 0);
+IC("edit-find",            "images/icon_search.png",           16, 0);
+
+IC("application-chat",     "images/icon_chat.png",             16, 0); /* */
+IC("application-clock",    "images/icon_clock.png",            16, 0); /* */
+
+IC("media-seek-forward",   "images/icon_forward.png",          16, 0);
+IC("media-seek-backward",  "images/icon_rewind.png",           16, 0);
+IC("media-skip-forward",   "images/icon_next.png",             16, 0);
+IC("media-skip-backward",  "images/icon_prev.png",             16, 0);
+IC("media-playback-pause", "images/icon_pause.png",            16, 0);
+IC("media-playback-start", "images/icon_play.png",             16, 0);
+IC("media-playback-stop",  "images/icon_stop.png",             16, 0);
+IC("media-eject",          "images/icon_eject.png",            16, 0);
+
+IC("audio-volume",         "images/icon_volume.png",           16, 0); /* */
+IC("audio-volume-muted",   "images/icon_mute.png",             16, 0);
+
+/// TODO emoticons, file, no_photo
+#undef IC
+
+
+/*
+ * All the icons below this point are not standard and are to be considered
+ * deprecated or at least just for internal usage only.
+ */
+
+#define IC(Name, Alias, File, Min, Max) \
    group { name: "elm/icon/"##Name##"/default"; min: Min Min; max: Max Max; \
-      alias: "elm/icon/"##Alias##"/default";                            \
-      parts { part { name: "base";             							\
-            description { aspect: 1.0 1.0; aspect_preference: BOTH;     \
-               image.normal: File; } } } }
+   alias: "elm/icon/"##Alias##"/default"; \
+   images.image: File COMP; parts { part { name: "base"; \
+   description { aspect: 1.0 1.0; aspect_preference: BOTH; \
+   image.normal: File; } } } }
+IC("home",        "toolbar/home",        "images/icon_home.png",        16, 0);
+IC("close",       "toolbar/close",       "images/icon_close.png",       16, 0);
+IC("apps",        "toolbar/apps",        "images/icon_apps.png",        16, 0);
+IC("arrow_up",    "toolbar/arrow_up",    "images/icon_arrow_up.png",    16, 0);
+IC("arrow_down",  "toolbar/arrow_down",  "images/icon_arrow_down.png",  16, 0);
+IC("arrow_left",  "toolbar/arrow_left",  "images/icon_arrow_left.png",  16, 0);
+IC("arrow_right", "toolbar/arrow_right", "images/icon_arrow_right.png", 16, 0);
+IC("chat",        "toolbar/chat",        "images/icon_chat.png",        16, 0);
+IC("clock",       "toolbar/clock",       "images/icon_clock.png",       16, 0);
+IC("delete",      "toolbar/delete",      "images/icon_delete.png",      16, 0);
+IC("edit",        "toolbar/edit",        "images/icon_edit.png",        16, 0);
+IC("refresh",     "toolbar/refresh",     "images/icon_refresh.png",     16, 0);
+IC("file",        "toolbar/file",        "images/icon_file.png",        16, 0);
+IC("no_photo",    "photo/no_photo",      "images/icon_head.png",        16, 0);
+IC("search",      "toolbar/search",      "images/icon_search.png",      16, 0);
+#undef IC
 
-#define GROUP_ICON(Name, File, Min, Max)                      \
+#define IC(Name, File, Min, Max) \
    group { name: "elm/icon/"##Name##"/default"; min: Min Min; max: Max Max; \
-      images.image: File COMP; parts { part { name: "base";             \
-            description { aspect: 1.0 1.0; aspect_preference: BOTH;     \
-               image.normal: File; } } } }
-               
-#define GROUP_ICON1(Name, File, Min, Max)                      \
-   group { name: "elm/icon/"##Name##"/default"; min: Min Min; max: Max Max; \
-      parts { part { name: "base";							             \
-            description { aspect: 1.0 1.0; aspect_preference: BOTH;     \
-               image.normal: File; } } } }
+   images.image: File COMP; parts { part { name: "base"; \
+   description { aspect: 1.0 1.0; aspect_preference: BOTH; \
+   image.normal: File; } } } }
 
-group { name: "elm/icon/arrow_down/default";
-   alias: "elm/icon/toolbar/arrow_down/default";
-   alias: "elm/icon/toolbar/more_menu/default"; min: 32 32;
-   parts { part { name: "base";
-         description { state: "default" 0.0; aspect: 1.0 1.0; aspect_preference: BOTH;
-            image.normal: "images/elm/icon_arrow_down.png"; } } } }
+IC("toolbar/more_menu",    "images/icon_arrow_down.png", 16, 0);
+IC("toolbar/folder",       "images/icon_folder.png",     16, 0);
 
-GROUP_ALIAS_ICON1("arrow_up", "toolbar/arrow_up", "images/elm/icon_arrow_up.png", 32, 0);
-GROUP_ALIAS_ICON1("arrow_left", "toolbar/arrow_left", "images/elm/icon_arrow_left.png", 32, 0);
-GROUP_ALIAS_ICON1("arrow_right", "toolbar/arrow_right", "images/elm/icon_arrow_right.png", 32, 0);
+IC("arrow_up_left",        "images/icon_arrow_up_left.png",    16, 0);
+IC("arrow_up_right",       "images/icon_arrow_up_right.png",   16, 0);
+IC("arrow_down_left",      "images/icon_arrow_down_left.png",  16, 0);
+IC("arrow_down_right",     "images/icon_arrow_down_right.png", 16, 0);
 
+IC("menu/home",            "images/icon_home.png",        16, 0);
+IC("menu/close",           "images/icon_close.png",       16, 0);
+IC("menu/apps",            "images/icon_apps.png",        16, 0);
+IC("menu/arrow_up",        "images/icon_arrow_up.png",    16, 0);
+IC("menu/arrow_down",      "images/icon_arrow_down.png",  16, 0);
+IC("menu/arrow_left",      "images/icon_arrow_left.png",  16, 0);
+IC("menu/arrow_right",     "images/icon_arrow_right.png", 16, 0);
+IC("menu/chat",            "images/icon_chat.png",        16, 0);
+IC("menu/clock",           "images/icon_clock.png",       16, 0);
+IC("menu/delete",          "images/icon_delete.png",      16, 0);
+IC("menu/edit",            "images/icon_edit.png",        16, 0);
+IC("menu/refresh",         "images/icon_refresh.png",     16, 0);
+IC("menu/folder",          "images/icon_folder.png",      16, 0);
+IC("menu/file",            "images/icon_file.png",        16, 0);
 
-GROUP_ALIAS_ICON("home", "toolbar/home", "images/elm/icon_home.png", 32, 0);
-GROUP_ALIAS_ICON("close", "toolbar/close", "images/elm/icon_close.png", 32, 0);
-GROUP_ALIAS_ICON("apps", "toolbar/apps", "images/elm/icon_apps.png", 32, 0);
-GROUP_ALIAS_ICON("chat", "toolbar/chat", "images/elm/icon_chat.png", 32, 0);
-GROUP_ALIAS_ICON("clock", "toolbar/clock", "images/elm/icon_clock.png", 32, 0);
-GROUP_ALIAS_ICON("delete", "toolbar/delete", "images/elm/icon_delete.png", 32, 0);
-GROUP_ALIAS_ICON("edit", "toolbar/edit", "images/elm/icon_edit.png", 32, 0);
-GROUP_ALIAS_ICON("refresh", "toolbar/refresh", "images/elm/icon_refresh.png", 32, 0);
-GROUP_ALIAS_ICON("folder", "toolbar/folder", "images/elm/icon_folder.png", 32, 0);
-GROUP_ALIAS_ICON("file", "toolbar/file", "images/elm/icon_file.png", 32, 0);
-///////////////////////////////////////////////////////////////////////////////
-GROUP_ICON("menu/home", "images/elm/icon_home.png", 24, 24);
-GROUP_ICON("menu/close", "images/elm/icon_close.png", 24, 24);
-GROUP_ICON("menu/apps", "images/elm/icon_apps.png", 24, 24);
-GROUP_ICON1("menu/arrow_up", "images/elm/icon_arrow_up.png", 24, 24);
-GROUP_ICON1("menu/arrow_down", "images/elm/icon_arrow_down.png", 24, 24);
-GROUP_ICON1("menu/arrow_left", "images/elm/icon_arrow_left.png", 24, 24);
-GROUP_ICON1("menu/arrow_right", "images/elm/icon_arrow_right.png", 24, 24);
-GROUP_ICON("menu/chat", "images/elm/icon_chat.png", 24, 24);
-GROUP_ICON("menu/clock", "images/elm/icon_clock.png", 24, 24);
-GROUP_ICON("menu/delete", "images/elm/icon_delete.png", 24, 24);
-GROUP_ICON("menu/edit", "images/elm/icon_edit.png", 24, 24);
-GROUP_ICON("menu/refresh", "images/elm/icon_refresh.png", 24, 24);
-GROUP_ICON("menu/folder", "images/elm/icon_folder.png", 24, 24);
-GROUP_ICON("menu/file", "images/elm/icon_file.png", 24, 24);
+IC("media_player/forward", "images/icon_forward.png", 16, 0);
+IC("media_player/info",    "images/icon_info.png",    16, 0);
+IC("media_player/next",    "images/icon_next.png",    16, 0);
+IC("media_player/pause",   "images/icon_pause.png",   16, 0);
+IC("media_player/play",    "images/icon_play.png",    16, 0);
+IC("media_player/prev",    "images/icon_prev.png",    16, 0);
+IC("media_player/rewind",  "images/icon_rewind.png",  16, 0);
+IC("media_player/stop",    "images/icon_stop.png",    16, 0);
+IC("media_player/eject",   "images/icon_eject.png",   16, 0);
+IC("media_player/volume",  "images/icon_volume.png",  16, 0);
+IC("media_player/mute",    "images/icon_mute.png",    16, 0);
+#undef IC
 
-GROUP_ICON("media_player/forward", "images/elm/mp_forward.png", 16, 0);
-GROUP_ICON("media_player/info", "images/elm/mp_info.png", 16, 0);
-GROUP_ICON("media_player/next", "images/elm/mp_next.png", 16, 0);
-GROUP_ICON("media_player/pause", "images/elm/mp_pause.png", 16, 0);
-GROUP_ICON("media_player/play", "images/elm/mp_play.png", 16, 0);
-GROUP_ICON("media_player/prev", "images/elm/mp_prev.png", 16, 0);
-GROUP_ICON("media_player/rewind", "images/elm/mp_rewind.png", 16, 0);
-GROUP_ICON("media_player/stop", "images/elm/mp_stop.png", 16, 0);
-
-///////////////////////////////////////////////////////////////////////////////
+#define IC(Name, File, Min, Max) \
+   group { name: "elm/icon/"##Name##"/default/default"; min: Min Min; max: Max Max; \
+   alias: "elm/icon/"##Name##"/default/flush"; \
+   images.image: File COMP; parts { \
+   part { name: "base"; \
+   description { aspect: 1.0 1.0; aspect_preference: BOTH; \
+   image.normal: File;} } \
+   } }
+IC("media_player/forward", "images/icon_forward.png", 16, 0);
+IC("media_player/info",    "images/icon_info.png",    16, 0);
+IC("media_player/next",    "images/icon_next.png",    16, 0);
+IC("media_player/pause",   "images/icon_pause.png",   16, 0);
+IC("media_player/play",    "images/icon_play.png",    16, 0);
+IC("media_player/prev",    "images/icon_prev.png",    16, 0);
+IC("media_player/rewind",  "images/icon_rewind.png",  16, 0);
+IC("media_player/stop",    "images/icon_stop.png",    16, 0);
+IC("media_player/eject",   "images/icon_eject.png",   16, 0);
+IC("media_player/volume",  "images/icon_volume.png",  16, 0);
+IC("media_player/mute",    "images/icon_mute.png",    16, 0);
+#undef IC
