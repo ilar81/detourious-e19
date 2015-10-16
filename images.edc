@@ -258,31 +258,6 @@ image: "images/window-border_bt3.png" COMP; /* maximize */
 image: "images/window-border_bt4.png" COMP; /* close */
 image: "images/window-border_bt5.png" COMP; /* base for border menu */
 
-//~ window border menu (details)
-image: "images/button_detail_basic.png" COMP; 			/* empty */
-image: "images/button_detail_borderless.png" COMP; 		/* empty */
-image: "images/button_detail_close.png" COMP;
-image: "images/button_detail_fullscreen.png" COMP;
-image: "images/button_detail_kill.png" COMP;
-image: "images/button_detail_locks.png" COMP; 			/* empty */
-image: "images/button_detail_locks_user.png" COMP; 		/* empty */
-image: "images/button_detail_locks_application.png" COMP; 	/* empty */
-image: "images/button_detail_maximize.png" COMP;
-image: "images/button_detail_minimize.png" COMP;
-image: "images/button_detail_properties.png" COMP;
-image: "images/button_detail_remember.png" COMP; 		/* empty */
-image: "images/button_detail_sendto.png" COMP; 			/* empty */
-image: "images/button_detail_shade.png" COMP;
-image: "images/button_detail_skip.png" COMP; 			/* empty */
-image: "images/button_detail_skip_pager.png" COMP; 		/* empty */
-image: "images/button_detail_skip_taskbar.png" COMP; 		/* empty */
-image: "images/button_detail_skip_winlist.png" COMP; 		/* empty */
-image: "images/button_detail_stack_below.png" COMP; 		/* empty */
-image: "images/button_detail_stacking.png" COMP; 		/* empty */
-image: "images/button_detail_stack_normal.png" COMP; 		/* empty */
-image: "images/button_detail_stack_on_top.png" COMP; 		/* empty */
-image: "images/button_detail_stick.png" COMP;
-
 //~ pager
 image: "images/pager_im0.png" COMP; /* unfocused */
 image: "images/pager_im1.png" COMP; /* selected window: icon also used by winlist */
