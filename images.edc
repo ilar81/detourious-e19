@@ -718,3 +718,4 @@ image: "images/actions/format-text-strikethrough.png" COMP;
 image: "images/actions/finish.png" COMP;
 image: "images/actions/mail-mark-unread.png" COMP;
 image: "images/actions/gtk-leave-fullscreen.png" COMP;
+image: "images/actions/kill.png" COMP;
