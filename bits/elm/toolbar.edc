@@ -1,11 +1,6 @@
 group { name: "elm/toolbar/base/default";
-	images {
-		image: "images/elm/icon_left_arrow.png" COMP;
-		image: "images/elm/icon_right_arrow.png" COMP;
-	}
 	parts {
 		part { name: "base";
-			mouse_events: 1;
 			description { state: "default" 0.0;
 				image {
 					normal: "images/menubar.png";
@@ -14,7 +9,7 @@ group { name: "elm/toolbar/base/default";
 				color_class: "dialog_base";
 			}
 		}
-		part { name: "clipper";
+		part { name: "clipper"; type: RECT;
 			type: RECT;
 			mouse_events: 0;
 			description {
@@ -29,7 +24,7 @@ group { name: "elm/toolbar/base/default";
 				}
 			}
 		}
-		part { name: "elm.swallow.content";
+		part { name: "elm.swallow.content"; type: SWALLOW;
 			clip_to: "clipper";
 			type: SWALLOW;
 			description {
@@ -38,63 +33,307 @@ group { name: "elm/toolbar/base/default";
 				rel2.to: "clipper";
 			}
 		}
-		part { name: "left_arrow";
-			mouse_events: 0;
+		part { name: "arrow_clipper_l"; type: RECT;
 			description { state: "default" 0.0;
-				image.normal: "images/elm/icon_left_arrow.png";
-				aspect: 1.0 1.0;
-				aspect_preference: VERTICAL;
+				visible: 0;
+			}
+			description { state: "visible" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part { name: "arrow_l"; mouse_events: 0;
+			clip_to: "arrow_clipper_l";
+			description { state: "default" 0.0;
+				rel1.to: "arrow_l_ev";
+				rel2.to: "arrow_l_ev";
+				image.normal: "images/scrollbar_im6.png";
+				min: 13 17;
+				max: 13 17;
+				fixed: 1 1;
+				color_class: "fileman_arrow";
+			}
+			description { state: "clicked" 0.0;
+				inherit: "default" 0.0;
+				color: 0 0 0 255;
+			}
+		}
+		part { name: "arrow_l_ev"; type: RECT;
+			scale: 1;
+			clip_to: "arrow_clipper_l";
+			description { state: "default" 0.0;
+				rel1.to: "clipper";
+				rel2.to: "clipper";
 				align: 0.0 0.5;
-				min: 16 16;
-				max: 16 16;
-			}
-			description { state: "hidden" 0.0;
-				inherit: "default" 0.0;
-				visible: 0;
-				color: 255 255 255 0;
-			}
-		}
-		part { name: "right_arrow";
-			mouse_events: 0;
-			description { state: "default" 0.0;
-				image.normal: "images/elm/icon_right_arrow.png";
-				aspect: 1.0 1.0;
-				aspect_preference: VERTICAL;
-				align: 1.0 0.5;
-				min: 16 16;
-				max: 16 16;
-			}
-			description { state: "hidden" 0.0;
-				inherit: "default" 0.0;
-				visible: 0;
-				color: 255 255 255 0;
-			}
-		}
-		part { name: "event";
-			type: RECT;
-			mouse_events: 1;
-			repeat_events: 1;
-			description { state: "default" 0.0;
 				color: 0 0 0 0;
+				min: 18 18;
+				max: 18 18;
+				fixed: 1 1;
+			}
+		}
+		part { name: "arrow_clipper_r"; type: RECT;
+			description { state: "default" 0.0;
+				visible: 0;
+			}
+			description { state: "visible" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part { name: "arrow_r"; mouse_events: 0;
+			clip_to: "arrow_clipper_r";
+			description { state: "default" 0.0;
+				rel1.to: "arrow_r_ev";
+				rel2.to: "arrow_r_ev";
+				image.normal: "images/scrollbar_im7.png";
+				min: 13 17;
+				max: 13 17;
+				fixed: 1 1;
+				color_class: "fileman_arrow";
+			}
+			description { state: "clicked" 0.0;
+				inherit: "default" 0.0;
+				color: 0 0 0 255;
+			}
+		}
+		part { name: "arrow_r_ev"; type: RECT;
+			scale: 1;
+			clip_to: "arrow_clipper_r";
+			description { state: "default" 0.0;
+				rel1.to: "clipper";
+				rel2.to: "clipper";
+				align: 1.0 0.5;
+				color: 0 0 0 0;
+				min: 18 18;
+				max: 18 18;
+				fixed: 1 1;
+			}
+		}
+		part { name: "arrow_clipper_u"; type: RECT;
+			description { state: "default" 0.0;
+				visible: 0;
+			}
+			description { state: "visible" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part { name: "arrow_u"; mouse_events: 0;
+			clip_to: "arrow_clipper_u";
+			description { state: "default" 0.0;
+				rel1.to: "arrow_u_ev";
+				rel2.to: "arrow_u_ev";
+				image.normal: "images/scrollbar_im8.png";
+				min: 17 13;
+				max: 17 13;
+				fixed: 1 1;
+				color_class: "fileman_arrow";
+			}
+			description { state: "clicked" 0.0;
+				inherit: "default" 0.0;
+				color: 0 0 0 255;
+			}
+		}
+		part { name: "arrow_u_ev"; type: RECT;
+			scale: 1;
+			clip_to: "arrow_clipper_u";
+			description { state: "default" 0.0;
+				rel1.to: "base";
+				rel2.to: "base";
+				align: 0.5 0.0;
+				color: 0 0 0 0;
+				min: 18 18;
+				max: 18 18;
+				fixed: 1 1;
+			}
+		}
+		part { name: "arrow_clipper_d"; type: RECT;
+			description { state: "default" 0.0;
+				visible: 0;
+			}
+			description { state: "visible" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		part { name: "arrow_d"; mouse_events: 0;
+			clip_to: "arrow_clipper_d";
+			description { state: "default" 0.0;
+				rel1.to: "arrow_d_ev";
+				rel2.to: "arrow_d_ev";
+				image.normal: "images/scrollbar_im9.png";
+				min: 17 13;
+				max: 17 13;
+				fixed: 1 1;
+				color_class: "fileman_arrow";
+			}
+			description { state: "clicked" 0.0;
+				inherit: "default" 0.0;
+				color: 0 0 0 255;
+			}
+		}
+		part { name: "arrow_d_ev"; type: RECT;
+			scale: 1;
+			clip_to: "arrow_clipper_d";
+			description { state: "default" 0.0;
+				rel1.to: "base";
+				rel2.to: "base";
+				align: 0.5 1.0;
+				color: 0 0 0 0;
+				min: 18 18;
+				max: 18 18;
+				fixed: 1 1;
 			}
 		}
 	}
 	programs {
-		program { name: "sb_hbar_show";
-			signal: "elm,action,show,hbar";
-			source: "elm";
-			action:  STATE_SET "default" 0.0;
-			transition: LINEAR 0.5;
-			target: "left_arrow";
-			target: "right_arrow";
+		program {
+			signal: "elm,action,show,left"; source: "elm";
+			action: STATE_SET "visible" 0.0;
+			target: "arrow_clipper_l";
+			target: "arrow_clipper_l";
 		}
-		program { name: "sb_hbar_hide";
-			signal: "elm,action,hide,hbar";
-			source: "elm";
-			action:  STATE_SET "hidden" 0.0;
-			target: "left_arrow";
-			target: "right_arrow";
-			transition: LINEAR 0.5;
+		program {
+			signal: "elm,action,hide,left"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_clipper_l";
+			target: "arrow_clipper_l";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_l_ev";
+			action: SIGNAL_EMIT "elm,action,left" "elm";
+			after: "arrow_l_repeat";
+		}
+		program { name: "arrow_l_repeat";
+			action: SIGNAL_EMIT "elm,action,left" "elm";
+			in: 0.3 0.0;
+			after: "arrow_l_repeat";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_l_ev";
+			action: ACTION_STOP;
+			target: "arrow_l_repeat";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_l_ev";
+			action: STATE_SET "clicked" 0.0;
+			target: "arrow_l";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_l_ev";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_l";
+		}
+		program {
+			signal: "elm,action,show,right"; source: "elm";
+			action: STATE_SET "visible" 0.0;
+			target: "arrow_clipper_r";
+			target: "arrow_clipper_r";
+		}
+		program {
+			signal: "elm,action,hide,right"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_clipper_r";
+			target: "arrow_clipper_r";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_r_ev";
+			action: SIGNAL_EMIT "elm,action,right" "elm";
+			after: "arrow_r_repeat";
+		}
+		program { name: "arrow_r_repeat";
+			action: SIGNAL_EMIT "elm,action,right" "elm";
+			in: 0.3 0.0;
+			after: "arrow_r_repeat";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_r_ev";
+			action: ACTION_STOP;
+			target: "arrow_r_repeat";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_r_ev";
+			action: STATE_SET "clicked" 0.0;
+			target: "arrow_r";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_r_ev";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_r";
+		}
+		program {
+			signal: "elm,action,show,up"; source: "elm";
+			action: STATE_SET "visible" 0.0;
+			target: "arrow_clipper_u";
+			target: "arrow_clipper_u";
+		}
+		program {
+			signal: "elm,action,hide,up"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_clipper_u";
+			target: "arrow_clipper_u";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_u_ev";
+			action: SIGNAL_EMIT "elm,action,up" "elm";
+			after: "arrow_u_repeat";
+		}
+		program { name: "arrow_u_repeat";
+			action: SIGNAL_EMIT "elm,action,up" "elm";
+			in: 0.3 0.0;
+			after: "arrow_u_repeat";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_u_ev";
+			action: ACTION_STOP;
+			target: "arrow_u_repeat";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_u_ev";
+			action: STATE_SET "clicked" 0.0;
+			target: "arrow_u";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_u_ev";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_u";
+		}
+		program {
+			signal: "elm,action,show,down"; source: "elm";
+			action: STATE_SET "visible" 0.0;
+			target: "arrow_clipper_d";
+			target: "arrow_clipper_d";
+		}
+		program {
+			signal: "elm,action,hide,down"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_clipper_d";
+			target: "arrow_clipper_d";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_d_ev";
+			action: SIGNAL_EMIT "elm,action,down" "elm";
+			after: "arrow_d_repeat";
+		}
+		program { name: "arrow_d_repeat";
+			action: SIGNAL_EMIT "elm,action,down" "elm";
+			in: 0.3 0.0;
+			after: "arrow_d_repeat";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_d_ev";
+			action: ACTION_STOP;
+			target: "arrow_d_repeat";
+		}
+		program {
+			signal: "mouse,down,1*"; source: "arrow_d_ev";
+			action: STATE_SET "clicked" 0.0;
+			target: "arrow_d";
+		}
+		program {
+			signal: "mouse,up,1"; source: "arrow_d_ev";
+			action: STATE_SET "default" 0.0;
+			target: "arrow_d";
 		}
 	}
 }
@@ -109,7 +348,7 @@ group { name: "elm/toolbar/item/default";
 	#define LABEL    2
 	#define MASK     3
 	#define DISABLE  4
-   script {   
+	script {   
       public btmode;
       public eval_mode(m) {
          new m1 = m & MASK;
@@ -232,7 +471,7 @@ group { name: "elm/toolbar/item/default";
 			type: SWALLOW;
 			clip_to: "elm.icon.clipper";
 			description { state: "default" 0.0;
-				align: 0.5 0.0;
+				align: 0.5 0.5;
 				fixed: 0 0;
 				rel1 {
 					relative: 0.0 0.0;
@@ -250,7 +489,7 @@ group { name: "elm/toolbar/item/default";
 			type: SWALLOW;
 			clip_to: "elm.icon_new.clipper";
 			description { state: "default" 0.0;
-				align: 0.5 0.0;
+				align: 0.5 0.5;
 				fixed: 0 0;
 				rel1 {
 					relative: 0.0 0.0;
