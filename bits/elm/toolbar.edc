@@ -340,7 +340,7 @@ group { name: "elm/toolbar/base/default";
 
 group { name: "elm/toolbar/item/default";
 	images {
-		image: "images/elm/toolbar_sel.png" COMP;
+		image: "images/elm/menu_im3.png" COMP;
 	}
 	data.item: "transition_animation_on" "1";
 	data.item: "focusraise" "on";
@@ -403,6 +403,26 @@ group { name: "elm/toolbar/item/default";
 			description { state: "default" 0.0;
 			}
 		}
+		part { name: "highlight";
+			mouse_events: 0;
+			description { state: "default" 0.0;
+				visible: 0;
+				rel1.to: "base";
+				rel2.to: "base";
+				color: 255 255 255 0;
+				image {
+					normal: "images/elm/menu_im3.png";
+					border: 5 5 5 5;
+				}
+				image.middle: SOLID;
+				fill.smooth: 0;
+			}
+			description { state: "selected" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+				color: 255 255 255 100;
+			}
+		}
 		part { name: "bg";
 			mouse_events: 0;
 			description { state: "default" 0.0;
@@ -426,26 +446,6 @@ group { name: "elm/toolbar/item/default";
 				inherit: "default" 0.0;
 				visible: 0;
 				color: 255 255 255 0;
-			}
-		}
-		part { name: "highlight";
-			mouse_events: 0;
-			description { state: "default" 0.0;
-				visible: 0;
-				rel1.to: "base";
-				rel2.to: "base";
-				color: 255 255 255 0;
-				image {
-					normal: "images/elm/menu_im2.png";
-					border: 5 5 5 5;
-				}
-				image.middle: SOLID;
-				fill.smooth: 0;
-			}
-			description { state: "selected" 0.0;
-				inherit: "default" 0.0;
-				visible: 1;
-				color: 255 255 255 70;
 			}
 		}
 		part { name: "bg2";
