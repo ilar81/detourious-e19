@@ -503,7 +503,6 @@ group { name: "elm/toolbar/item/default";
 			clip_to: "elm.icon.clipper";
 			description { state: "default" 0.0;
 				align: 0.5 0.5;
-				fixed: 0 0;
 				rel1 {
 					relative: 0.0 0.0;
 					offset: 2 4;
@@ -518,15 +517,15 @@ group { name: "elm/toolbar/item/default";
 			description { state: "noicon" 0.0;
 				inherit: "default" 0.0;
 				visible: 0;
-				rel1.offset: 2 1;
+				rel1.offset: 2 0;
 				rel2.relative: 1.0 0.0;
-				rel2.offset: -3 -7;
+				rel2.offset: -3 -4;
 			}
 			description { state: "icononly" 0.0;
 				inherit: "default" 0.0;
 				visible: 0;
 				rel2.relative: 1.0 1.0;
-				rel2.offset: -3 -6;
+				rel2.offset: -3 -3;
 				rel2.to_y: "elm.icon.clipper";
 			}
 		}
@@ -550,15 +549,15 @@ group { name: "elm/toolbar/item/default";
 			description { state: "noicon" 0.0;
 				inherit: "default" 0.0;
 				visible: 0;
-				rel1.offset: 2 1;
+				rel1.offset: 2 0;
 				rel2.relative: 1.0 0.0;
-				rel2.offset: -3 -7;
+				rel2.offset: -3 -4;
 			}
 			description { state: "icononly" 0.0;
 				inherit: "default" 0.0;
 				visible: 0;
 				rel2.relative: 1.0 1.0;
-				rel2.offset: -3 -6;
+				rel2.offset: -3 -3;
 				rel2.to_y: "elm.icon_new.clipper";
 			}
 		}
@@ -582,18 +581,27 @@ group { name: "elm/toolbar/item/default";
 				inherit: "default" 0.0;
 				TEXT_COLOR_SELECTED;
 			}
-			description { state: "visible" 0.0;
-				inherit: "default" 0.0;
-			}
 			description { state: "disabled" 0.0;
 				inherit: "default" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
 			}
-			description { state: "disabled_visible" 0.0;
+			description { state: "noicon" 0.0;
 				inherit: "default" 0.0;
+				rel1.offset: 4 2;
+				rel1.relative: 0.0 0.0;
+				align: 0.5 0.5;
+			}
+			description { state: "noicon_disabled" 0.0;
+				inherit: "noicon" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
+			}
+			description { state: "icononly" 0.0;
+				inherit: "default" 0.0;
+				text.min: 0 0;
+				visible: 0;
+				fixed: 1 1;
 			}
 		}
 		part { name: "elm.text_new";
@@ -617,18 +625,27 @@ group { name: "elm/toolbar/item/default";
 				inherit: "default" 0.0;
 				TEXT_COLOR_SELECTED;
 			}
-			description { state: "visible" 0.0;
-				inherit: "default" 0.0;
-			}
 			description { state: "disabled" 0.0;
 				inherit: "default" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
 			}
-			description { state: "disabled_visible" 0.0;
+			description { state: "noicon" 0.0;
 				inherit: "default" 0.0;
+				rel1.offset: 4 2;
+				rel1.relative: 0.0 0.0;
+				align: 0.5 0.5;
+			}
+			description { state: "noicon_disabled" 0.0;
+				inherit: "noicon" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
+			}
+			description { state: "icononly" 0.0;
+				inherit: "default" 0.0;
+				text.min: 0 0;
+				visible: 0;
+				fixed: 1 1;
 			}
 		}
 
@@ -929,18 +946,28 @@ group { name: "elm/toolbar/item/item_horizontal";
 				inherit: "default" 0.0;
 				TEXT_COLOR_SELECTED;
 			}
-			description { state: "visible" 0.0;
-				inherit: "default" 0.0;
-			}
 			description { state: "disabled" 0.0;
 				inherit: "default" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
 			}
-			description { state: "disabled_visible" 0.0;
+			description { state: "noicon" 0.0;
 				inherit: "default" 0.0;
+				rel1.offset: 4 2;
+				rel1.relative: 0.0 0.0;
+				rel1.to: "elm.icon.clipper";
+				align: 0.5 0.5;
+				}
+			description { state: "noicon_disabled" 0.0;
+				inherit: "noicon" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
+			}
+			description { state: "icononly" 0.0;
+				inherit: "default" 0.0;
+				text.min: 0 0;
+				visible: 0;
+				fixed: 1 1;
 			}
 		}
 		part { name: "elm.text_new";
@@ -962,18 +989,29 @@ group { name: "elm/toolbar/item/item_horizontal";
 				inherit: "default" 0.0;
 				TEXT_COLOR_SELECTED;
 			}
-			description { state: "visible" 0.0;
-				inherit: "default" 0.0;
-			}
 			description { state: "disabled" 0.0;
 				inherit: "default" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
 			}
-			description { state: "disabled_visible" 0.0;
+
+			description { state: "noicon" 0.0;
 				inherit: "default" 0.0;
+				rel1.offset: 4 2;
+				rel1.relative: 0.0 0.0;
+				rel1.to: "elm.icon.clipper";
+				align: 0.5 0.5;
+			}
+			description { state: "noicon_disabled" 0.0;
+				inherit: "noicon" 0.0;
 				color: 0 0 0 128;
 				color3: 0 0 0 0;
+			}
+			description { state: "icononly" 0.0;
+				inherit: "default" 0.0;
+				text.min: 0 0;
+				visible: 0;
+				fixed: 1 1;
 			}
 		}
 	}
