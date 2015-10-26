@@ -37,8 +37,8 @@ group {
                 rel1 {
                     to: "frame";
                     to_y: "e.text.label";
-                    relative: 0.0 0.0;
-                    offset: 10 14;
+                    relative: 0.0 1.0;
+					offset: 10 0;
                 }
                 rel2 {
                     to: "frame";
