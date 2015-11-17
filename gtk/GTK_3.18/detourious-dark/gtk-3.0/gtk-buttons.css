@@ -837,7 +837,9 @@ GtkSwitch.trough:active {
 /***************
  * title button *
  ***************/
- .header-bar .button.titlebutton,
+.header-bar.default-decoration .button.titlebutton,
+.titlebar.default-decoration .button.titlebutton,
+.header-bar .button.titlebutton,
 .titlebar .button.titlebutton,
 GtkCalendar.header .button.titlebutton,
 .header-bar .button.titlebutton:hover,
@@ -845,7 +847,11 @@ GtkCalendar.header .button.titlebutton,
 GtkCalendar.header .button.titlebutton:hover,
 .header-bar .button.titlebutton:active,
 .titlebar .button.titlebutton:active,
-GtkCalendar.header .button.titlebutton:active {
+GtkCalendar.header .button.titlebutton:active,
+.titlebar .button.titlebutton:checked,
+.header-bar .button.titlebutton:checked,
+.titlebar .titlebutton.button:insensitive,
+.titlebar .titlebutton.button:backdrop:insensitive {
 	background: none;
 	border-width: 0;
 	border-color: transparent;
@@ -856,43 +862,71 @@ GtkCalendar.header .button.titlebutton:active {
 	padding: 0;
 }
 
-.titlebar .right .titlebutton,
-.titlebar .left .titlebutton,
-.titlebar .right .titlebutton:hover,
-.titlebar .left .titlebutton:hover,
-.titlebar .right .titlebutton:active:hover,
-.titlebar .left .titlebutton:active:hover,
-.titlebar .right .titlebutton:backdrop,
-.titlebar .left .titlebutton:backdrop {
+.header-bar .button.titlebutton.close,
+.header-bar .button.titlebutton.maximize,
+.header-bar .button.titlebutton.minimize,
+.titlebar .button.titlebutton.close,
+.titlebar .button.titlebutton.maximize,
+.titlebar .button.titlebutton.minimize {
 	color: transparent;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-.titlebar .right .titlebutton,
-.titlebar .left .titlebutton,
-.titlebar .right .titlebutton:nth-last-child(3):hover,
-.titlebar .right:dir(rtl) .titlebutton:nth-child(3):hover,
-.titlebar .left .titlebutton:nth-child(3):hover,
-.titlebar .left:dir(rtl) .titlebutton:nth-last-child(3):hover,
-.titlebar .right .titlebutton:nth-last-child(2):hover,
-.titlebar .right:dir(rtl) .titlebutton:nth-child(2):hover,
-.titlebar .left .titlebutton:nth-child(2):hover,
-.titlebar .left:dir(rtl) .titlebutton:nth-last-child(2):hover,
-.titlebar .right .titlebutton:last-child:hover,
-.titlebar .right:dir(rtl) .titlebutton:first-child:hover,
-.titlebar .left .titlebutton:first-child:hover,
-.titlebar .left:dir(rtl) .titlebutton:last-child:hover {
+.header-bar .button.titlebutton.close,
+.header-bar .button.titlebutton.maximize,
+.header-bar .button.titlebutton.minimize,
+.titlebar .button.titlebutton.close,
+.titlebar .button.titlebutton.maximize,
+.titlebar .button.titlebutton.minimize,
+.header-bar .button.titlebutton.close:hover,
+.titlebar .button.titlebutton.close:hover,
+.header-bar .button.titlebutton.maximize:hover,
+.titlebar .button.titlebutton.maximize:hover,
+.header-bar .button.titlebutton.minimize:hover,
+.titlebar .button.titlebutton.minimize:hover,
+.header-bar.selection-mode .button.titlebutton.close,
+.header-bar.selection-mode .button.titlebutton.maximize,
+.header-bar.selection-mode .button.titlebutton.minimize,
+.titlebar.selection-mode .button.titlebutton.close,
+.titlebar.selection-mode .button.titlebutton.maximize,
+.titlebar.selection-mode .button.titlebutton.minimize,
+.header-bar.selection-mode .button.titlebutton.close:hover,
+.titlebar.selection-mode .button.titlebutton.close:hover,
+.header-bar.selection-mode .button.titlebutton.maximize:hover,
+.titlebar.selection-mode .button.titlebutton.maximize:hover,
+.header-bar.selection-mode .button.titlebutton.minimize:hover,
+.titlebar.selection-mode .button.titlebutton.minimize:hover {
 	background-image: url("images/Buttons/titlebutton.png");
 }
 
-.titlebar .right .titlebutton:backdrop,
-.titlebar .left .titlebutton:backdrop {
+.header-bar .button.titlebutton.close:backdrop,
+.header-bar .button.titlebutton.maximize:backdrop,
+.header-bar .button.titlebutton.minimize:backdrop,
+.titlebar .button.titlebutton.close:backdrop,
+.titlebar .button.titlebutton.maximize:backdrop,
+.titlebar .button.titlebutton.minimize:backdrop,
+.header-bar.selection-mode .button.titlebutton.close:backdrop,
+.header-bar.selection-mode .button.titlebutton.maximize:backdrop,
+.header-bar.selection-mode .button.titlebutton.minimize:backdrop,
+.titlebar.selection-mode .button.titlebutton.close:backdrop,
+.titlebar.selection-mode .button.titlebutton.maximize:backdrop,
+.titlebar.selection-mode .button.titlebutton.minimize:backdrop {
 	background-image: url("images/Buttons/titlebutton-unfocused.png");
 }
 
-.titlebar .right .titlebutton:active:hover,
-.titlebar .left .titlebutton:active:hover {
+.header-bar .button.titlebutton.close:active,
+.titlebar .button.titlebutton.close:active,
+.header-bar .button.titlebutton.maximize:active,
+.titlebar .button.titlebutton.maximize:active,
+.header-bar .button.titlebutton.minimize:active,
+.titlebar .button.titlebutton.minimize:active,
+.header-bar.selection-mode .button.titlebutton.close:active,
+.titlebar.selection-mode .button.titlebutton.close:active,
+.header-bar.selection-mode .button.titlebutton.maximize:active,
+.titlebar.selection-mode .button.titlebutton.maximize:active,
+.header-bar.selection-mode .button.titlebutton.minimize:active,
+.titlebar.selection-mode .button.titlebutton.minimize:active {
 	background-image: url("images/Buttons/titlebutton-pressed.png");
 }
 

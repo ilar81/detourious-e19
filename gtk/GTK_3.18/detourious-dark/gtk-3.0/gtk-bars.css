@@ -434,7 +434,7 @@ GtkLevelBar.vertical {
  *********************/
 
 .titlebar,
-.titlebar.default-decoration {
+.header-bar {
     padding: 5px 9px 4px 9px;
     border-radius: 4px 4px 0px 0px;
     text-shadow: none;
@@ -461,7 +461,8 @@ GtkLevelBar.vertical {
 	border-radius: 0px;
 }
 
-.titlebar:backdrop {
+.titlebar:backdrop,
+.header-bar:backdrop {
 	padding: 5px 9px 4px 9px;
     border-radius: 4px 4px 0px 0px;
     text-shadow: none;
@@ -487,19 +488,27 @@ GtkLevelBar.vertical {
 	color: shade(@theme_bg_color, 0.7);
 }
 
-.titlebar.default-decoration {
+.titlebar.default-decoration,
+.header-bar.default-decoration {
     border: none;
     box-shadow: none;
 }
 
-.titlebar .title {
-    font: bold;
+.titlebar .title,
+.header-bar .title {
+    font-weight: bold;
 	text-shadow: 0px 1px alpha(@light_shadow, 0.5);
 }
 
-.titlebar .title:backdrop {
+.titlebar .title:backdrop,
+.header-bar .title:backdrop {
 	color: #787d8b;
 	text-shadow: none;
+}
+
+.titlebar .subtitle,
+.header-bar .subtitle {
+    font-size: smaller;
 }
 
 .titlebar .menu .separator {
