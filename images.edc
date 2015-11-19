@@ -14,6 +14,7 @@ image: "images/elm/ephoto/directory-up-512.png" COMP;
 /*image: "images/elm/dialog_im0.png" COMP;*/ /* background */
 
 image: "images/elm/menu_im2.png" COMP; /* hilite */
+image: "images/elm/menu_im3.png" COMP;
 
 image: "images/elm/comp-sh1.png" COMP; /* left arrow */
 

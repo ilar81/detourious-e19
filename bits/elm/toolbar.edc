@@ -339,11 +339,9 @@ group { name: "elm/toolbar/base/default";
 }
 
 group { name: "elm/toolbar/item/default";
+	alias: "elm/toolbar/item/item_centered"; 
 	data.item: "transition_animation_on" "1";
 	data.item: "focusraise" "on";
-	images {
-		image: "images/elm/menu_im3.png" COMP;
-	}
 	#define ICON     1
 	#define LABEL    2
 	#define MASK     3
@@ -619,7 +617,6 @@ group { name: "elm/toolbar/item/default";
 				inherit: "default" 0.0;
 				rel1.offset: 4 2;
 				rel1.relative: 0.0 0.0;
-				align: 0.5 0.5;
 			}
 			description { state: "noicon_disabled" 0.0;
 				inherit: "noicon" 0.0;
@@ -674,7 +671,6 @@ group { name: "elm/toolbar/item/default";
 				inherit: "default" 0.0;
 				rel1.offset: 4 2;
 				rel1.relative: 0.0 0.0;
-				align: 0.5 0.5;
 			}
 			description { state: "noicon_disabled" 0.0;
 				inherit: "noicon" 0.0;
@@ -744,7 +740,6 @@ group { name: "elm/toolbar/item/default";
 		}
 		program { name: "st1";
 			signal: "elm,text,hidden"; source: "elm";
-			action: STATE_SET "notext" 0.0;
 			script {
 				new m = get_int(btmode);
 				m &= ~LABEL; set_int(btmode, m);
@@ -763,7 +758,7 @@ group { name: "elm/toolbar/item/default";
 			signal: "elm,icon,hidden"; source: "elm";
 			script {
 				new m = get_int(btmode);
-				m |= ICON; set_int(btmode, m);
+				m &= ~ICON; set_int(btmode, m); 
 				eval_mode(m);
 			}
 		}
@@ -771,7 +766,7 @@ group { name: "elm/toolbar/item/default";
 			signal: "elm,icon,visible"; source: "elm";
 			script {
 				new m = get_int(btmode);
-				m &= ~ICON; set_int(btmode, m);
+				m |= ICON; set_int(btmode, m); 
 				eval_mode(m);
 			}
 		}
@@ -855,9 +850,183 @@ group { name: "elm/toolbar/item/default";
 }
 
 group { name: "elm/toolbar/item/item_horizontal";
-	inherit: "elm/toolbar/item/default";
+	data.item: "transition_animation_on" "1";
+	data.item: "focusraise" "on";
+	#define ICON     1
+	#define LABEL    2
+	#define MASK     3
+	#define DISABLE  4
+	script {   
+      public btmode;
+      public eval_mode(m) {
+         new m1 = m & MASK;
+         new d = m & DISABLE;
+         if (m1 == (ICON | LABEL)) {
+            if (!d) {
+               set_state(PART:"elm.swallow.icon", "default", 0.0);
+               set_state(PART:"icon_clip", "default", 0.0);
+               set_state(PART:"elm.text", "default", 0.0);
+            } else {
+               set_state(PART:"elm.swallow.icon", "default", 0.0);
+               set_state(PART:"icon_clip", "disabled", 0.0);
+               set_state(PART:"elm.text", "disabled", 0.0);
+            }
+         } else if (m1 == (ICON)) {
+            if (!d) {
+               set_state(PART:"elm.swallow.icon", "icononly", 0.0);
+               set_state(PART:"icon_clip", "default", 0.0);
+               set_state(PART:"elm.text", "icononly", 0.0);
+            } else {
+               set_state(PART:"elm.swallow.icon", "icononly", 0.0);
+               set_state(PART:"icon_clip", "disabled", 0.0);
+               set_state(PART:"elm.text", "icononly", 0.0);
+            }
+         } else if (m1 == (LABEL)) {
+            if (!d) {
+               set_state(PART:"elm.swallow.icon", "noicon", 0.0);
+               set_state(PART:"icon_clip", "default", 0.0);
+               set_state(PART:"elm.text", "noicon", 0.0);
+            } else {
+               set_state(PART:"elm.swallow.icon", "noicon", 0.0);
+               set_state(PART:"icon_clip", "disabled", 0.0);
+               set_state(PART:"elm.text", "noicon_disabled", 0.0);
+            }
+         } else {
+            if (!d) {
+               set_state(PART:"elm.swallow.icon", "noicon", 0.0);
+               set_state(PART:"icon_clip", "default", 0.0);
+               set_state(PART:"elm.text", "noicon", 0.0);
+            } else {
+               set_state(PART:"elm.swallow.icon", "noicon", 0.0);
+               set_state(PART:"icon_clip", "disabled", 0.0);
+               set_state(PART:"elm.text", "noicon_disabled", 0.0);
+             }
+         }
+      }
+   }
+   
 	parts {
-		part { name: "elm.swallow.icon";
+		part { name: "base"; type: SPACER;
+			description { state: "default" 0.0;
+			}
+		}
+		part { name: "highlight";
+			mouse_events: 0;
+			description { state: "default" 0.0;
+				visible: 0;
+				rel1.to: "base";
+				rel2.to: "base";
+				color: 255 255 255 0;
+				image {
+					normal: "images/elm/menu_im3.png";
+					border: 5 5 5 5;
+				}
+				image.middle: SOLID;
+				fill.smooth: 0;
+			}
+			description { state: "selected" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+				color: 255 255 255 100;
+			}
+		}
+		part { name: "bg";
+			mouse_events: 0;
+			description { state: "default" 0.0;
+				visible: 0;
+				rel1.to: "base";
+				rel2.to: "base";
+				color: 255 255 255 0;
+				image {
+					normal: "images/elm/menu_im2.png";
+					border: 5 5 5 5;
+				}
+				image.middle: SOLID;
+				fill.smooth: 0;
+			}
+			description { state: "selected" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+				color: 255 255 255 255;
+			}
+			description { state: "disabled" 0.0;
+				inherit: "default" 0.0;
+				visible: 0;
+				color: 255 255 255 0;
+			}
+		}
+		part { name: "bg2";
+			mouse_events: 0;
+			description { state: "default" 0.0;
+				visible: 0;
+				color: 255 255 255 0;
+				rel1.to: "base";
+				rel2.to: "base";
+				rel1.offset: -3 -3;
+				rel2.offset: 2 2;				
+				image {
+					normal: "images/button_im4.png";
+					border: 7 7 7 7;
+				}
+			}
+			description { state: "selected" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+				color: 255 255 255 255;
+			}
+			description { state: "disabled" 0.0;
+				inherit: "default" 0.0;
+				visible: 0;
+				color: 255 255 255 0;
+			}
+		}
+		part { name: "bg3";
+			mouse_events: 0;
+			description { state: "default" 0.0;
+				visible: 0;
+				color: 255 255 255 0;
+				rel1.to: "base";
+				rel2.to: "base";
+				rel1.offset: -3 -3;
+				rel2.offset: 2 2;				
+				image {
+					normal: "images/button_im7.png";
+					border: 7 7 7 7;
+				}
+			}
+			description { state: "selected" 0.0;
+				inherit: "default" 0.0;
+				visible: 1;
+				color: 255 255 255 255;
+			}
+			description { state: "disabled" 0.0;
+				inherit: "default" 0.0;
+				visible: 0;
+				color: 255 255 255 0;
+			}
+		}
+		part { name: "icon_clip"; type: RECT;
+			description { state: "default" 0.0;
+			}
+			description { state: "disabled" 0.0;
+				inherit: "default" 0.0;
+				color: 255 255 255 64;
+			}
+		}
+		part { name: "icon_clip1"; type: RECT;
+			clip_to: "icon_clip";
+			description { state: "default" 0.0;
+				color: 255 255 255 255;
+				visible: 1;
+			}
+			description { state: "animation" 0.0;
+				inherit: "default" 0.0;
+				color: 255 255 255 0;
+				visible: 0;
+			}
+		}
+		part { name: "elm.swallow.icon"; type: SWALLOW;
+			clip_to: "icon_clip1";
 			description { state: "default" 0.0;
 				align: 0.0 0.5;
 				fixed: 1 0;
@@ -882,8 +1051,20 @@ group { name: "elm/toolbar/item/item_horizontal";
 				rel2.to_y: "icon_clip";
 			}
 		}
-		part { name: "elm.swallow.icon_new";
-			type: SWALLOW;
+		part { name: "icon_clip2"; type: RECT;
+			clip_to: "icon_clip";
+			description { state: "default" 0.0;
+				color: 255 255 255 0;
+				visible: 0;
+			}
+			description { state: "animation" 0.0;
+				inherit: "default" 0.0;
+				color: 255 255 255 255;
+				visible: 1;
+			}
+		}
+		part { name: "elm.swallow.icon_new"; type: SWALLOW;
+			clip_to: "icon_clip2";
 			description { state: "default" 0.0;
 				align: 0.0 0.5;
 				aspect_preference: VERTICAL;
@@ -913,7 +1094,23 @@ group { name: "elm/toolbar/item/item_horizontal";
 				rel2.to_y: "icon_clip";
 			}
 		}
+		part { name: "text_clip1"; type: RECT;
+			description { state: "default" 0.0;
+				color: 255 255 255 255;
+				visible: 1;
+			}
+			description { state: "animation" 0.0;
+				inherit: "default" 0.0;
+				color: 255 255 255 0;
+				visible: 0;
+			}
+		}
 		part { name: "elm.text";
+			type: TEXT;
+			effect: SHADOW;
+			mouse_events:  0;
+			scale: 1;
+			clip_to: "text_clip1";
 			description { state: "default" 0.0;
 				rel1.offset: 1 2;
 				rel1.relative: 1.0 0.0;
@@ -939,7 +1136,7 @@ group { name: "elm/toolbar/item/item_horizontal";
 				rel1.relative: 0.0 0.0;
 				rel1.to: "icon_clip";
 				align: 0.5 0.5;
-				}
+			}
 			description { state: "noicon_disabled" 0.0;
 				inherit: "noicon" 0.0;
 				color: 0 0 0 128;
@@ -952,10 +1149,23 @@ group { name: "elm/toolbar/item/item_horizontal";
 				fixed: 1 1;
 			}
 		}
+		part { name: "text_clip2"; type: RECT;
+			description { state: "default" 0.0;
+				color: 255 255 255 0;
+				visible: 0;
+			}
+			description { state: "animation" 0.0;
+				inherit: "default" 0.0;
+				color: 255 255 255 255;
+				visible: 1;
+			}
+		}
 		part { name: "elm.text_new";
 			type: TEXT;
 			effect: SHADOW;
 			mouse_events:  0;
+			clip_to: "text_clip2";
+			scale: 1;
 			description { state: "default" 0.0;
 				rel1.offset: 1 2;
 				rel1.relative: 1.0 0.0;
@@ -996,16 +1206,169 @@ group { name: "elm/toolbar/item/item_horizontal";
 				fixed: 1 1;
 			}
 		}
+		part { name: "event"; type: RECT;
+			ignore_flags: ON_HOLD;
+			description { state: "default" 0.0;
+				color: 0 0 0 0;
+			}
+		}
 	}
-}
-
-// === item: style assumed to exist
-// XXX: vert vs horiz (should emit)
-// XXX: seriously... why do we have this style?
-group { name: "elm/toolbar/item/item_centered";
-   inherit: "elm/toolbar/item/default";
-   parts {
-   }
+	programs {
+		program { name: "go_active";
+			signal: "elm,state,selected"; source: "elm";
+			action: STATE_SET "selected" 0.0;
+			target: "bg";
+			target: "bg2";
+			target: "bg3";
+			target: "elm.text";
+			target: "elm.text_new";
+		}
+		program { name: "go_passive";
+			signal: "elm,state,unselected"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "bg";
+			target: "bg2";
+			target: "bg3";
+			target: "elm.text";
+			target: "elm.text_new";
+		}
+		program { name: "go";
+			signal: "mouse,up,1"; source: "event";
+			action: SIGNAL_EMIT "elm,action,click" "elm";
+		}
+		program {
+			signal: "elm,highlight,on"; source: "elm";
+			action: STATE_SET "selected" 0.0;
+			target: "highlight";
+		}
+		program {
+			signal: "elm,highlight,off"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "highlight";
+		}
+		program { name: "mouse,in";
+			signal:  "mouse,in"; source:  "event";
+			action:  SIGNAL_EMIT "elm,mouse,in" "elm";
+		}
+		program { name: "mouse,out";
+			signal:  "mouse,out"; source:  "event";
+			action:  SIGNAL_EMIT "elm,mouse,out" "elm";
+		}
+		program { name: "st0";
+			signal: "load"; source: "";
+			script {
+				set_int(btmode, LABEL | ICON);
+			}
+		}
+		program { name: "st1";
+			signal: "elm,text,hidden"; source: "elm";
+			script {
+				new m = get_int(btmode);
+				m &= ~LABEL; set_int(btmode, m);
+				eval_mode(m);
+			}
+		}
+		program { name: "st2";
+			signal: "elm,text,visible"; source: "elm";
+			script {
+				new m = get_int(btmode);
+				m |= LABEL; set_int(btmode, m);
+				eval_mode(m);
+			}
+		}
+		program { name: "st3";
+			signal: "elm,icon,hidden"; source: "elm";
+			script {
+				new m = get_int(btmode);
+				m &= ~ICON; set_int(btmode, m); 
+				eval_mode(m);
+			}
+		}
+		program { name: "st4";
+			signal: "elm,icon,visible"; source: "elm";
+			script {
+				new m = get_int(btmode);
+				m |= ICON; set_int(btmode, m); 
+				eval_mode(m);
+			}
+		}
+		program { name: "st5";
+			signal: "elm,state,disabled"; source: "elm";
+			script {
+				new m = get_int(btmode);
+				m |= DISABLE; set_int(btmode, m);
+				eval_mode(m);
+			}
+		}
+		program { name: "st6";
+			signal: "elm,state,enabled"; source: "elm";
+			script {
+				new m = get_int(btmode);
+				m &= ~DISABLE; set_int(btmode, m);
+				eval_mode(m);
+			}
+		}
+		program {
+			signal: "elm,state,moving"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "bg2";
+			target: "bg3";
+		}
+		program {
+			signal: "elm,state,icon_set,forward"; source: "elm";
+			after: "icon_set,animation";
+		}
+		program {
+			signal: "elm,state,icon_set,backward"; source: "elm";
+			after: "icon_set,animation";
+		}
+		program { name: "icon_set,animation";
+			signal: "elm,state,icon_set"; source: "elm";
+			action: STATE_SET "animation" 0.0;
+			target: "icon_clip1";
+			target: "icon_clip2";
+			transition: LINEAR 0.2;
+			after: "icon_set,animation,done";
+		}
+		program { name: "icon_set,animation,done";
+			action: SIGNAL_EMIT "elm,state,icon_set,done" "elm";
+		}
+		program { name: "icon,reset";
+			signal: "elm,state,icon,reset"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "icon_clip1";
+			target: "icon_clip2";
+		}
+		program {
+			signal: "elm,state,label_set,forward"; source: "elm";
+			after: "label_set,animation";
+		}
+		program {
+			signal: "elm,state,label_set,backward"; source: "elm";
+			after: "label_set,animation";
+		}
+		program { name: "label_set,animation";
+			signal: "elm,state,label_set"; source: "elm";
+			action: STATE_SET "animation" 0.0;
+			target: "text_clip1";
+			target: "text_clip2";
+			transition: LINEAR 0.2;
+			after: "label_set,animation,done";
+		}
+		program { name: "label_set,animation,done";
+			action: SIGNAL_EMIT "elm,state,label_set,done" "elm";
+		}
+		program { name: "label,reset";
+			signal: "elm,state,label,reset"; source: "elm";
+			action: STATE_SET "default" 0.0;
+			target: "text_clip1";
+			target: "text_clip2";
+		}
+	}
+#undef ICON
+#undef LABEL
+#undef MASK
+#undef DISABLE
 }
 
 group { name: "elm/toolbar/separator/default";
