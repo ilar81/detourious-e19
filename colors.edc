@@ -71,7 +71,7 @@ color_class {
 }
 color_class {
 	name: "border_buttons_post";
-	color: 255 255 255 190;
+	color: 255 255 255 220;
 }
 color_class {
 	name: "border_buttons_post_active";
