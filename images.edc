@@ -258,6 +258,7 @@ image: "images/window-border_bt2.png" COMP; /* minimize */
 image: "images/window-border_bt3.png" COMP; /* maximize */
 image: "images/window-border_bt4.png" COMP; /* close */
 image: "images/window-border_bt5.png" COMP; /* base for border menu */
+image: "images/window-border_bt6.png" COMP; /* contrast enhancer */
 
 //~ pager
 image: "images/pager_im0.png" COMP; /* unfocused */

@@ -242,6 +242,40 @@ group { name: "elm/ews/background/default";
 			color: 205 205 205 255;										\
 		}																\
 	}																	\
+	part {																\
+		name: NAME"_enh";												\
+		type: IMAGE;													\
+		mouse_events: 1;												\
+		description {													\
+			state: "default" 0.0;										\
+			min: SIZE;													\
+			max: SIZE;													\
+			rel1 {														\
+				to: "frame";											\
+				relative: REL1;											\
+				offset: OFF1;											\
+			}															\
+			rel2 {														\
+				to: "frame";											\
+				relative: REL2;											\
+				offset: OFF2;											\
+			}															\
+			image {														\
+				normal: "images/window-border_bt6.png";					\
+			}															\
+			color: 255 255 255 0;										\
+		}																\
+		description {													\
+			state: "focused" 0.0;										\
+			inherit: "default" 0.0;										\
+			color: 255 255 255 127;										\
+		}																\
+		description {													\
+			state: "clicked" 0.0;										\
+			inherit: "default" 0.0;										\
+			color: 205 205 205 195;										\
+		}																\
+	}																	\
 
 #define BORDER_BUTTONS(NAME, EVENT, SIZE, REL1, OFF1, REL2, OFF2, IMG)	\
 	BORDER_BUT(NAME, SIZE, REL1, OFF1, REL2, OFF2, IMG);				\
@@ -601,6 +635,9 @@ group { name: "elm/ews/decoration/default";
 			target: "button-close";
 			target: "button-max";
 			target: "button-min";
+			target: "button-close_enh";
+			target: "button-max_enh";
+			target: "button-min_enh";
 		}
 		program {
 			signal: "elm,state,focus,on"; source: "elm";
@@ -616,6 +653,9 @@ group { name: "elm/ews/decoration/default";
 			target: "button-close";
 			target: "button-max";
 			target: "button-min";
+			target: "button-close_enh";
+			target: "button-max_enh";
+			target: "button-min_enh";
 		}
 		BORDER_EVENT_MAP_RESIZE(LEFT, RIGHT, TOP, BOTTOM, 5);
 		program {
@@ -754,6 +794,9 @@ group { name: "elm/border/base/default";
 			target: "button-close";
 			target: "button-max";
 			target: "button-min";
+			target: "button-close_enh";
+			target: "button-max_enh";
+			target: "button-min_enh";
 		}
 		program {
 			signal: "elm,action,unfocus"; source: "elm";
@@ -769,6 +812,9 @@ group { name: "elm/border/base/default";
 			target: "button-close";
 			target: "button-max";
 			target: "button-min";
+			target: "button-close_enh";
+			target: "button-max_enh";
+			target: "button-min_enh";
 		}
 		program { name: "urg1";
 			signal: "elm,state,urgent"; source: "elm";
