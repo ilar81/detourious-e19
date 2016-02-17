@@ -281,7 +281,7 @@
 		}												\
 	}													\
 
-#define BORDER_BUTTONS(NAME, EVENT, SIZE, REL1, OFF1, REL2, OFF2, IMG)	\
+#define BORDER_BUTTONS(NAME, EVENT, SIZE, REL1, OFF1, REL2, OFF2)		\
 	part {																\
 		name: NAME"_bg";												\
 		type: IMAGE;													\
@@ -318,7 +318,7 @@
 				offset: OFF2;											\
 			}															\
 			image {														\
-				normal: IMG;											\
+				normal: "images/window-border_bt2.png";					\
 			}															\
 			color: 240 240 240 255;										\
 		}																\
@@ -341,14 +341,8 @@
 			state: "default" 0.0;										\
 			min: SIZE;													\
 			max: SIZE;													\
-			rel1 {														\
-				relative: REL1;											\
-				offset: OFF1;											\
-			}															\
-			rel2 {														\
-				relative: REL2;											\
-				offset: OFF2;											\
-			}															\
+			rel1.to: NAME;												\
+			rel2.to: NAME;												\
 			image {														\
 				normal: "images/window-border_bt6.png";					\
 			}															\
@@ -358,11 +352,6 @@
 			state: "focused" 0.0;										\
 			inherit: "default" 0.0;										\
 			color: 255 255 255 127;										\
-		}																\
-		description {													\
-			state: "clicked" 0.0;										\
-			inherit: "default" 0.0;										\
-			color: 255 255 255 195;										\
 		}																\
 	}																	\
 	part {																\
@@ -729,14 +718,11 @@ group {
 		BORDER_EVENT_MAP_RESIZE(LEFT, RIGHT, TOP, BOTTOM, 5);
 
         BORDER_BUTTONS("button-close", "e.event.close",
-					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP);
 		BORDER_BUTTONS("button-max",   "e.event.maximize",
-					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP);
 		BORDER_BUTTONS("button-min",   "e.event.minimize",
-					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP);
 
         BORDER_ICON("e.swallow.icon", "e.event.icon", "e.event.titlebar");
         BORDER_KNOB();
@@ -768,8 +754,7 @@ group {
         BORDER_EVENT_MAP("e.event.titlebar",  0.0 0.0, 0 0, 1.0 0.0, -1 TOP);
 
         BORDER_BUTTONS("button-close", "e.event.close",
-					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP);
 
         BORDER_ICON("e.swallow.icon", "e.event.icon", "e.event.titlebar");
         BORDER_KNOB();
@@ -800,14 +785,11 @@ group { name: "e/widgets/border/sparkle/border";
 		BORDER_EVENT_MAP_RESIZE(LEFT, RIGHT, TOP, BOTTOM, 5);
 
         BORDER_BUTTONS("button-close", "e.event.close",
-					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP);
 		BORDER_BUTTONS("button-max",   "e.event.maximize",
-					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP);
 		BORDER_BUTTONS("button-min",   "e.event.minimize",
-					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP);
 
         BORDER_ICON("e.swallow.icon", "e.event.icon", "e.event.titlebar");
         BORDER_KNOB();
@@ -862,14 +844,11 @@ group {
 		BORDER_EVENT_MAP_RESIZE(LEFT, RIGHT, TOP, BOTTOM, 5);
 
         BORDER_BUTTONS("button-close", "e.event.close",
-					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP);
 		BORDER_BUTTONS("button-max",   "e.event.maximize",
-					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP);
 		BORDER_BUTTONS("button-min",   "e.event.minimize",
-					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP);
 
         BORDER_ICON("e.swallow.icon", "e.event.icon", "e.event.titlebar");
         BORDER_KNOB();
@@ -926,14 +905,11 @@ group {
 		BORDER_EVENT_MAP_RESIZE(LEFT, RIGHT, TOP, BOTTOM, 5);
 
         BORDER_BUTTONS("button-close", "e.event.close",
-					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -8 1, 1.0 0.0, -28 TOP);
 		BORDER_BUTTONS("button-max",   "e.event.maximize",
-					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -29 1, 1.0 0.0, -49 TOP);
 		BORDER_BUTTONS("button-min",   "e.event.minimize",
-					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP,
-					   "images/window-border_bt2.png");
+					   20 18, 1.0 0.0, -50 1, 1.0 0.0, -70 TOP);
 
         BORDER_ICON("e.swallow.icon", "e.event.icon", "e.event.titlebar");
         BORDER_KNOB();
