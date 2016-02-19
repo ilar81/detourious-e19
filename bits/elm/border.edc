@@ -260,7 +260,7 @@ group { name: "elm/ews/background/default";
 		description {													\
 			state: "focused" 0.0;										\
 			inherit: "default" 0.0;										\
-			color: 255 255 255 127;										\
+			color: 255 255 255 192;										\
 		}																\
 	}																	\
 
