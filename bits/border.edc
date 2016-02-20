@@ -351,7 +351,7 @@
 		description {													\
 			state: "focused" 0.0;										\
 			inherit: "default" 0.0;										\
-			color: 255 255 255 192;										\
+			COLORIZE_BT_RING_ACTIVE;									\
 		}																\
 	}																	\
 	part {																\
@@ -681,11 +681,13 @@ part { name: "shadow_clip"; type: RECT;										\
 #define COLORIZE_ACTIVE
 #define COLORIZE_BUTTONS		color_class: "border_buttons_post";
 #define COLORIZE_ACTIVE_BUTTONS color_class: "border_buttons_post_active";
+#define COLORIZE_BT_RING_ACTIVE	color: 255 255 255 192; 
 #else
 #define COLORIZE        color_class: "border_frame";
 #define COLORIZE_ACTIVE color_class: "border_frame_active";
 #define COLORIZE_BUTTONS		color_class: "border_frame";
 #define COLORIZE_ACTIVE_BUTTONS color_class: "border_frame_active";
+#define COLORIZE_BT_RING_ACTIVE	color: 255 255 255 0;
 #endif		
 
 #define TOP 23
@@ -1012,4 +1014,5 @@ BORDER_MENU_BUTTON("properties", "gtk-edit");
 #undef COLORIZE_ACTIVE
 #undef COLORIZE_BUTTONS
 #undef COLORIZE_ACTIVE_BUTTONS
+#undef COLORIZE_BT_RING_ACTIVE
 #undef BORDER_KNOB

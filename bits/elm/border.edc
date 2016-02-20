@@ -114,11 +114,13 @@ group { name: "elm/ews/background/default";
 #define COLORIZE_ACTIVE
 #define COLORIZE_BUTTONS		color_class: "border_buttons_post";
 #define COLORIZE_ACTIVE_BUTTONS color_class: "border_buttons_post_active";
+#define COLORIZE_BT_RING_ACTIVE	color: 255 255 255 192; 
 #else
 #define COLORIZE        color_class: "border_frame";
 #define COLORIZE_ACTIVE color_class: "border_frame_active";
 #define COLORIZE_BUTTONS		color_class: "border_frame";
 #define COLORIZE_ACTIVE_BUTTONS color_class: "border_frame_active";
+#define COLORIZE_BT_RING_ACTIVE	color: 255 255 255 0; 
 #endif
 
 
@@ -260,7 +262,7 @@ group { name: "elm/ews/background/default";
 		description {													\
 			state: "focused" 0.0;										\
 			inherit: "default" 0.0;										\
-			color: 255 255 255 192;										\
+			COLORIZE_BT_RING_ACTIVE;									\
 		}																\
 	}																	\
 
@@ -1070,6 +1072,7 @@ group { name: "elm/ews/decoration/borderless";
 #undef COLORIZE_ACTIVE
 #undef COLORIZE_BUTTONS
 #undef COLORIZE_ACTIVE_BUTTONS
+#undef COLORIZE_BT_RING_ACTIVE
 #undef BORDER_EVENT_MAP
 #undef BORDER_EVENT_MAP_RESIZE
 #undef BORDER_CLIENT
